@@ -1,0 +1,17 @@
+.topslider {
+	background: black;
+	padding: 40px;
+	&__item {
+		background: gray;
+		padding: 10px;
+		margin: 10px 40px;
+		color: white;
+		&.selected {
+			background: red;
+		}
+	}
+	&__details {
+		padding: 40px;
+	}
+
+}

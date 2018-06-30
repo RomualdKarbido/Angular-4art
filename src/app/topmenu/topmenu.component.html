@@ -1,0 +1,64 @@
+<div class="topmenu">
+	<div class="topmenu__left-wrap">
+		<div class="topmenu__left topmenu__left_language">
+			<div class="topmenu__item "> 
+				<a href="/" class="topmenu__item-link active">
+					ru
+				</a>
+			</div>
+			<div class="topmenu__item active">
+				<a href="/" class="topmenu__item-link" >
+					en
+				</a>
+			</div>
+		</div>
+
+		<div class="topmenu__left">
+			<div 	class="topmenu__item" 
+			*ngFor="let menu of TopMenulist">
+
+			<a class="topmenu__item-link" 
+			routerLink="{{ menu.link }}" 
+			[ngClass]="{'active' : isActiveMenuItem(menu) }">
+			{{ menu.name }} 
+		</a>
+
+
+	</div>
+</div>
+
+
+<div class="topmenu__left topmenu__left_art">
+
+
+	<div class="topmenu__item" *ngFor="let art of TopMenuArts">
+		<div class="topmenu__item-wrap">
+			<a 	class="topmenu__item-link"
+			routerLink="{{ art.link }}" 
+			[ngClass]="{'active' : isActiveArtItem(art) }"> 
+			{{ art.name }}
+		</a>
+
+		<div class="topmenu__submenu" >
+			<div class="topmenu__submenu-item" *ngFor="let artSub of TopMenuArts">
+				<a 	class="topmenu__submenu-link"
+				routerLink="{{ artSub.link }}" > 
+				{{ artSub.name }}
+			</a>
+		</div>
+	</div>
+</div>
+</div>
+
+
+
+</div>
+</div>
+
+
+<div class="topmenu__right">
+	123
+</div>
+</div>
+
+

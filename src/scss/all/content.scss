@@ -1,0 +1,14 @@
+.content {
+	padding: 50px 0 100px;
+	background: white;
+	min-height: calc(100vh - #{$header-h} - 100px);
+	margin: 0 auto;
+	margin-top: 100px;
+	max-width: 1200px;
+	h1 {
+		font-size: 34px;
+		font-weight: 700;
+		color: $black;
+		margin-bottom: 45px;
+	}
+}

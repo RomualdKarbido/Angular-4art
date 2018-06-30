@@ -1,0 +1,56 @@
+$sp: 20px; //паддинг общий
+$red: #f44336; //красный цвет
+$black: #4A4A4A; //почти черный
+$gray: #F8F6F2; //серо-желтый
+$gray-light: #A5A5A5; //светосерый
+$gold: #AE9671; //золотой
+$header-h: 100px;  
+
+
+
+//animation: vizible  .3s;
+
+@keyframes vizible {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px); 
+  }
+}
+@keyframes preloader {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@keyframes preloader-fon {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%
+  }
+}
+.preloader {
+	position: fixed;
+	top: 97px;
+	
+	left: 0;
+	right: 0;
+	height: 3px;
+	display: flex;
+	z-index: 900;
+	// animation: preloader  .7s;
+	&__line {
+		height: 100%;
+		background-color: $red;
+		width: 0;
+		animation: preloader-fon  3s infinite;
+
+	}
+}

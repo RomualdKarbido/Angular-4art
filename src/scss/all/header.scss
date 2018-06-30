@@ -1,0 +1,11 @@
+.header {
+	height: $header-h;
+	color: white;
+	box-sizing: border-box;
+	background: black;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	z-index: 100;
+}

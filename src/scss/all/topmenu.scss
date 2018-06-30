@@ -1,0 +1,125 @@
+.topmenu {
+	width: calc(100% - #{$sp} * 4);
+	display: flex;
+	justify-content: space-between;
+	margin: 0 auto;
+	height: $header-h;
+	align-items: center;
+	&__item {
+		margin-right: 10px;
+		font-size: 16px;
+		display: flex;
+		align-items: center;
+		position: relative;
+		
+		&:after {
+			content: "\F12F";
+			color: $gold;
+			font-size: 6px;
+			font-family: "Material Design Icons";
+			position: relative;
+			padding-left: 10px;
+		}
+		&:last-child:after {
+			display: none;
+		}
+		&-wrap {
+			position: relative;
+			height: $header-h;
+			display: flex;
+			align-items: center;
+			&:hover {
+				.topmenu__submenu {
+					display: block;
+					animation: vizible  .3s;
+
+				}
+			}
+
+		}
+		&-link {
+			text-decoration: none;
+			color: white;
+			transition: color 0.2s;
+			text-transform: uppercase;
+
+			&.active {
+				color: $gold;
+			}
+		}
+		&:hover {
+			.topmenu__item-link {
+				color: lighten($gold, 20%);
+			}
+			.topmenu__item-link.active {
+				color: $red;
+			}
+
+		}
+	}
+	&__left {
+		display: flex;
+		border-right: 1px solid $gold;
+		height: 40px;
+		padding-right: $sp*2;
+		margin-right: $sp*3;
+		&_art {
+			border-right: none;
+		}
+		&_language {
+			.topmenu__item {
+				&:after {
+					content: '';
+					border-right: 1px solid white;
+					height: 15px;
+				}
+			}
+		}
+		&-wrap {
+			display: flex;
+		}
+	}
+
+	&__submenu {
+		display: none;
+		position: absolute;
+		background: black;
+		top: 75px;
+		left: -30px;
+		width: 180px;
+		height: auto;
+		padding: $sp $sp+10px 5px $sp+10px;
+		z-index: 110;
+		border-radius: 0 0 3px 3px;
+		&-link {
+			text-transform: uppercase;
+			font-weight: 700;
+			color: white;
+			text-decoration: none;
+			outline: none;
+			display: block;
+			font-size: 14px;
+			transition: color 0.2s;
+			&:hover {
+				color: lighten($gold, 20%);
+
+			}
+		}
+		&-item {
+			margin-bottom: $sp;
+		}
+	}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
