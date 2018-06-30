@@ -69,13 +69,13 @@ export class AllNewsComponent implements OnInit {
 				console.log('Id картинки -  'this.ImgNewsID[v]);
 
 				this.linkImg[v] = 'http://www.nd-ms.ru/wp-json/wp/v2/media/' + this.News[v].featured_media;
-				console.log('запрос на картинку -  'this.linkImg[v]);
+				console.log('запрос на img -  'this.linkImg[v]);
 
 				var obs5 = this.http.get("''" + this.linkImg[v] + "''").map(response => response.json());
 
 				obs5.subscribe( xx => {
 						this.linkImg2[v] = xx;
-						console.log('ответ на картинку -  'this.linkImg2[v].media_details.sizes.artist_midle.source_url);
+						console.log('ответ на img -  'this.linkImg2[v].media_details.sizes.artist_midle.source_url);
 				});
 			}
 		});
