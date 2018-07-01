@@ -39,6 +39,27 @@ export class AllNewsComponent implements OnInit {
 		obs1.subscribe( i => {
 			this.News = i;
 			console.log(this.News);
+			var obs1 = this.newsService.GetNews();
+			obs1.subscribe( i => {
+				this.News = i;
+				console.log(this.News);
+				
+				for(var r=0; r<this.News.length; r++) {
+					this.linkImg[r] = 'http://www.nd-ms.ru/wp-json/wp/v2/media/' + this.News[r].featured_media;
+					console.log('запрос на img - ' + ' -' + this.linkImg[r]);
+
+					var obs5 = this.http.get(this.linkImg[r])
+					.map(response => response.json());
+
+					obs5.subscribe( xx => {
+						this.linkImg2[r] = xx;
+						console.log('ответ на img -'  this.linkImg2[r].source_url);
+						console.log('запрос на img fin - ' + ' -' + this.linkImg[r]);
+						// this.News[r].featured_media = this.News[r].featured_media.replace(this.linkImg2[r].source_url));
+					});
+				}
+
+			});
 		})
 
 
@@ -48,38 +69,21 @@ export class AllNewsComponent implements OnInit {
 			this.Cat = ic;
 		})
 
-		var obs3 = this.newsService.GetNewsImg();
-		obs3.subscribe( im => {
-			this.ImgN = im;
-			console.log(this.ImgN);
-		})
+		// var obs3 = this.newsService.GetNewsImg();
+		// obs3.subscribe( im => {
+		// 	this.ImgN = im;
+		// 	console.log(this.ImgN);
+		// })
 
 
 
-		Observable.forkJoin([obs1, obs2, obs3]).subscribe(() => {
+		Observable.forkJoin([obs1, obs2]).subscribe(() => {
 			this.IsVisiblePreloader = false;
-			// ImgNewsID = this.News.featured_media.map(x);
-			// return: x;
-			// console.log(x);
-
-			for (var v=0; v<this.News.length; v++) {
-
-
-				this.ImgNewsID[v] = this.News[v].featured_media
-				console.log('Id картинки -  'this.ImgNewsID[v]);
-
-				this.linkImg[v] = 'http://www.nd-ms.ru/wp-json/wp/v2/media/' + this.News[v].featured_media;
-				console.log('запрос на img -  'this.linkImg[v]);
-
-				var obs5 = this.http.get("''" + this.linkImg[v] + "''").map(response => response.json());
-
-				obs5.subscribe( xx => {
-						this.linkImg2[v] = xx;
-						console.log('ответ на img -  'this.linkImg2[v].media_details.sizes.artist_midle.source_url);
-				});
-			}
-		});
+		}
 	}
+
+	
+
 
 	public getcategorynamebyid(id: any):string {
 		for (var i=0; i<this.Cat.length; i++) {
@@ -89,17 +93,6 @@ export class AllNewsComponent implements OnInit {
 		}
 		return '';
 	}
-
-
-
-	public getnewsbyid(idd: any):string {
-		for(var d=0; d<this.ImgN.length; d++) {
-			if (this.ImgN[d].id == idd) {
-				return this.ImgN[d].media_details.sizes.artist_midle.source_url
-			}
-		}
-		return '';
-	};
 
 
 

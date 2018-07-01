@@ -9,8 +9,9 @@
 	<div class="all-news__list">
 		<div class="all-news__item" *ngFor='let newsItem of News'>
 
-			<div class="all-news__item-img" 
-			[ngStyle]="{'background-image': 'url(' + getnewsbyid(newsItem.featured_media) + ')'}"></div>
+			<!-- <div class="all-news__item-img" 
+			[ngStyle]="{'background-image': 'url(' + getnewsbyid(newsItem.featured_media) + ')'}"></div> -->
+				<div class="all-news__item-img"></div>
 
 			<div class="all-news__item-wrap" >
 				<div class="all-news__item-title" [innerHTML]="newsItem.title.rendered"></div>
