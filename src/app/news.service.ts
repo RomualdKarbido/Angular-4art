@@ -23,6 +23,7 @@ export class NewsService {
 			.map(response => response.json());
 	}
 	GetNewsImg(){
-		return this.http.get('http://www.nd-ms.ru/wp-json/wp/v2/media').map(response => response.json());
+		return this.http.get('http://www.nd-ms.ru/wp-json/wp/v2/media')
+    .map(response => response.json());
 	}
 }

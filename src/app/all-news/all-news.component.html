@@ -3,53 +3,51 @@
 </div>
 
 <div class="all-news">
-	<h1>Архив новостей</h1>   
+	<h1>Архив новостей</h1>
 
 
 	<div class="all-news__list">
-		<div class="all-news__item" *ngFor='let newsItem of News'>
-
-			<!-- <div class="all-news__item-img" 
-			[ngStyle]="{'background-image': 'url(' + getnewsbyid(newsItem.featured_media) + ')'}"></div> -->
+		<div class="all-news__item"  *ngFor='let newsItem of News'>
+			<div routerLink="{{ '/all_news/news/' + newsItem.id }}" class="all-news__item-link">
+				<!-- <div class="all-news__item-img"
+				[ngStyle]="{'background-image': 'url(' + getnewsbyid(newsItem.featured_media) + ')'}"></div> -->
 				<div class="all-news__item-img"></div>
 
-			<div class="all-news__item-wrap" >
-				<div class="all-news__item-title" [innerHTML]="newsItem.title.rendered"></div>
-				<div class="all-news__item-text" [innerHTML]="newsItem.excerpt.rendered">
-					
-					{{ newsItem.excerpt.rendered }} 
-				</div>
-				<div class="all-news__item-footer">
-					<div class="all-news__item-date"><i class="mdi mdi-calendar-today"></i>
-						{{ newsItem.date_gmt | date:'MM.dd.yyyy'}}
+				<div class="all-news__item-wrap" >
+					<div class="all-news__item-title" [innerHTML]="newsItem.title.rendered"></div>
+					<div class="all-news__item-text" [innerHTML]="newsItem.excerpt.rendered">
+
+						{{ newsItem.excerpt.rendered }}
 					</div>
-					<div class="all-news__item-tag-left">
-						<div class="all-news__item-tag" 
+					<div class="all-news__item-footer">
+						<div class="all-news__item-date"><i class="mdi mdi-calendar-today"></i>
+							{{ newsItem.date_gmt | date:'MM.dd.yyyy'}}
+						</div>
+						<div class="all-news__item-tag-left">
+							<div class="all-news__item-tag"
 							*ngIf="newsItem.categories.length > 0">
-						
-							{{ getcategorynamebyid(newsItem.categories) }} 
-						 
+
+							{{ getcategorynamebyid(newsItem.categories) }}
+
 						</div>
 
 						<div class="all-news__item-tag">
-						
-							id={{ newsItem.id }} 
-						 
+
+							id={{ newsItem.id }}
+
 						</div>
 						<div class="all-news__item-tag">
-						
-							ImgID={{ newsItem.featured_media }} 
-						 
+
+							ImgID={{ newsItem.featured_media }}
+
 						</div>
 					</div>
-					
+
 
 				</div>
 			</div>
 		</div>
+
 	</div>
-</div> 
-
-
-
-
+</div>
+</div>
