@@ -9,7 +9,7 @@ export class TopmenuComponent implements OnInit {
 
 
 	TopMenulist = [
-		{name: 'Главная' , link: '/'},
+		{name: '' , link: '/'},
 		{name: 'Контакты', link: '/page/contact'},
 		{name: 'Новости', link: '/all_news'}
 	]
@@ -30,7 +30,7 @@ export class TopmenuComponent implements OnInit {
 
 
 	isActiveMenuItem(menu: any) {
-		return menu.link == this.router.url;
+		return this.router.url.indexOf(menu.link) != -1 &&  menu.link != '/';
 	}
 	isActiveArtItem(art: any) {
 		return art.link == this.router.url;

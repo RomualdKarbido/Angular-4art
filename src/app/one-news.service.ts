@@ -14,12 +14,12 @@ export class OneNewsService {
 
   constructor(private http: Http) {}
 
-  GetOneNews(){
-	return this.http.get('http://www.nd-ms.ru/wp-json/wp/v2/posts/3668')
+  GetOneNews(newsId: any){
+	return this.http.get('http://www.nd-ms.ru/wp-json/wp/v2/posts/' + newsId)
 		.map(response => response.json());
   }
   GetNews(){
 		return this.http.get('http://www.nd-ms.ru/wp-json/wp/v2/posts?per_page=12')
 			.map(response => response.json());
-	}
+	} 
 }

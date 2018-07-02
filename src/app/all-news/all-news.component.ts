@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { NewsService } from "../news.service";
 import { Observable } from 'rxjs-compat';
+import { Http } from '@angular/http';
 
 // import { Http } from '@angular/http';
 // import 'rxjs-compat/add/operator/map'
@@ -9,7 +10,7 @@ import { Observable } from 'rxjs-compat';
 
 
 
-@Component({
+@Component({ 
 	selector: 'app-all-news',
 	templateUrl: './all-news.component.html',
 	providers:[NewsService]
@@ -23,13 +24,12 @@ export class AllNewsComponent implements OnInit {
 	ImgN = [];
 	ImgNewsID = [];
 	linkImg = [];
-	linkImg2 = [];
 
 
 	public IsVisiblePreloader: boolean = true;
 
 
-	constructor(private newsService: NewsService) {
+	constructor(private newsService: NewsService, private http: Http) {
 
 
 
@@ -38,20 +38,18 @@ export class AllNewsComponent implements OnInit {
 			this.News = i;
 			console.log(this.News);
 
-			// for(var r=0; r<this.News.length; r++) {
-			// 	this.linkImg[r] = 'http://www.nd-ms.ru/wp-json/wp/v2/media/' + this.News[r].featured_media;
-			// 	console.log('запрос на img - ' + ' -' + this.linkImg[r]);
-			//
-			// 	var obs5 = this.http.get(this.linkImg[r])
-			// 	.map(response => response.json());
-			//
-			// 	obs5.subscribe( xx => {
-			// 		this.linkImg2[r] = xx;
-			// 		console.log('ответ на img -'  this.linkImg2[r].source_url);
-			// 		console.log('запрос на img fin - ' + ' -' + this.linkImg[r]);
-			// 		// this.News[r].featured_media = this.News[r].featured_media.replace(this.linkImg2[r].source_url));
-			// 	});
-			// }
+			for(var r=0; r<this.News.length; r++) {
+				this.linkImg[r] = 'http://www.nd-ms.ru/wp-json/wp/v2/media/' + this.News[r].featured_media;
+				console.log('запрос на img - ' + ' -' + this.linkImg[r]);
+			
+				var obs5 = this.http.get(this.linkImg[r]).map(response => response.json());
+				
+				obs5.subscribe( xx => {
+					var foundedNews = this.getNewsByFeaturedMediaId(xx.id);
+					if(foundedNews)
+						foundedNews.headimg = xx.source_url;
+				}); 
+			}
 
 		});
 
@@ -74,7 +72,15 @@ export class AllNewsComponent implements OnInit {
 	}
 
 
+	private getNewsByFeaturedMediaId(mediaId: any) : any {
+		for(var i = 0; i < this.News.length; i++)
+		{
+			if(this.News[i].featured_media == mediaId)
+				return this.News[i];
+		}
 
+		return null;
+	}
 
 	public getcategorynamebyid(id: any):string {
 		for (var i=0; i<this.Cat.length; i++) {

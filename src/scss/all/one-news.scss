@@ -77,6 +77,15 @@
       cursor: pointer;
       &:hover {
         .one-news__last-date {
+          color: black;
+          border-color: black;
+        }
+        .one-news__last-name { 
+            color: black;
+        }
+      }
+      &.active {
+        .one-news__last-date {
           color: $gold;
           border-color: $gold;
         }
