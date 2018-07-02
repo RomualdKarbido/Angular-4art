@@ -26,10 +26,6 @@ export class AllNewsComponent implements OnInit {
 	linkImg2 = [];
 
 
-
-
-
-
 	public IsVisiblePreloader: boolean = true;
 
 

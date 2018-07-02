@@ -1,3 +1,106 @@
 .one-news {
-  border: 1px solid red;
+  display: flex;
+  &__leftmenu {
+    flex: 0 0 360px;
+    position: relative;
+    &-fix {
+      position: fixed;
+      width: 275px;
+    }
+    &-title {
+      font-size: 20px;
+      color: $black;
+      font-weight: bold;
+      margin-bottom: $sp*2;
+      border-bottom: 2px solid $gold;
+      // margin-right: 85px;
+      padding-bottom: 10px;
+    }
+  }
+  &__contentblock {
+    flex: 1;
+  }
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    h1 {
+      br {
+        display: none;
+      }
+    }
+    &-date {
+      margin-top: 12px;
+      color: $black;
+      margin-left: $sp;
+      &:before {
+        content: "\F0F5";
+        font-family: "Material Design Icons";
+        position: relative;
+        margin-right: 5px;
+        top: 1px;
+      }
+    }
+  }
+  &__content {
+    line-height: 1.2;
+    color:$black;
+    margin-bottom: $sp*5;
+    p {
+      margin-bottom: $sp;
+    }
+    img {
+      margin-bottom: $sp;
+      border-radius: 3px;
+      max-width: 100%;
+    }
+    a {
+      color: $gold;
+    }
+    h3 {
+      font-weight: bold;
+      margin-bottom: $sp;
+      font-size: 18px;
+      margin-top: 30px;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+  }
+  &__last {
+    &-item {
+      display: flex;
+      align-items: flex-start;
+      border-bottom: 1px solid #E0E0E0;
+      // margin-right: 85px;
+      padding: 10px 0;
+      outline: none;
+      cursor: pointer;
+      &:hover {
+        .one-news__last-date {
+          color: $gold;
+          border-color: $gold;
+        }
+        .one-news__last-name {
+            color: $gold;
+        }
+      }
+    }
+    &-date {
+      font-size: 9px;
+      padding: 3px 5px 2px;
+      border-radius: 20px;
+      border: 2px solid #979797;
+      color: #979797;
+      line-height: 1;
+      font-weight: bold;
+      transition: all 0.2s;
+    }
+    &-name {
+      font-size: 14px;
+      color: lighten($black, 15%);
+      margin-left: 15px;
+      font-weight: bold;
+      transition: all 0.2s;
+    }
+  }
 }

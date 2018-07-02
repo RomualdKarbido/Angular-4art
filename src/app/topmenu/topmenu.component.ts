@@ -24,7 +24,7 @@ export class TopmenuComponent implements OnInit {
 	constructor(private router:Router) {}
 
 	ngOnInit() {
-		
+
 	}
 
 
