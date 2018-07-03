@@ -37,8 +37,27 @@ $header-h: 100px;
   }
 }
 .preloader {
-	position: fixed;
-	top: 97px;
+  position: fixed;
+  top: 97px;
+  
+  left: 0;
+  right: 0;
+  height: 3px;
+  display: flex;
+  z-index: 900;
+  // animation: preloader  .7s;
+  &__line {
+    height: 100%;
+    background-color: $red;
+    width: 0;
+    animation: preloader-fon  3s infinite;
+
+  }
+}
+.preloader-img {
+	position: absolute;
+  top: 252px;
+  z-index: 10;
 	
 	left: 0;
 	right: 0;
@@ -50,7 +69,7 @@ $header-h: 100px;
 		height: 100%;
 		background-color: $red;
 		width: 0;
-		animation: preloader-fon  3s infinite;
+		animation: preloader-fon  1s infinite;
 
 	}
 }

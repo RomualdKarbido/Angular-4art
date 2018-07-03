@@ -56,10 +56,4 @@ export class OneNewsComponent implements OnInit {
 
   ngOnInit() {
   }
-  // isActiveMenu(menu: any) {
-  //   return menu.link == this.router.url;
-  //   console.log(menu);
-  // }
-
-
 }

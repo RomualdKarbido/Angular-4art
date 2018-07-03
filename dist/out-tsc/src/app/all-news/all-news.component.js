@@ -12,35 +12,62 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var news_service_1 = require("../news.service");
 var rxjs_compat_1 = require("rxjs-compat");
+var http_1 = require("@angular/http");
+// import { Http } from '@angular/http';
+// import 'rxjs-compat/add/operator/map'
 var AllNewsComponent = /** @class */ (function () {
-    function AllNewsComponent(newsService) {
+    function AllNewsComponent(newsService, http) {
+        // contNewsrestart(){
+        // 	var obs1 = this.newsService.GetNews(this.newPage); 
+        var _this = this;
         this.newsService = newsService;
+        this.http = http;
         this.News = [];
         this.Cat = [];
         this.ImgN = [];
+        this.ImgNewsID = [];
+        this.linkImg = [];
         this.IsVisiblePreloader = true;
-    }
-    AllNewsComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        var obs1 = this.newsService.GetNews();
-        obs1.subscribe(function (c) {
-            _this.News = c;
-            console.log(_this.News);
-            // this.getnewsbyid(0);
-        });
+        this.newPage = 1;
+        // 	obs1.subscribe( i => {
+        // 		this.News = i;
+        // 		console.log(this.News);
+        // 		for(var r=0; r<this.News.length; r++) {
+        // 			this.linkImg[r] = 'http://www.nd-ms.ru/wp-json/wp/v2/media/' + this.News[r].featured_media;
+        // 			console.log('запрос на img - ' + ' -' + this.linkImg[r]);
+        // 			var obs5 = this.http.get(this.linkImg[r]).map(response => response.json());
+        // 			obs5.subscribe( xx => {
+        // 				var foundedNews = this.getNewsByFeaturedMediaId(xx.id);
+        // 				if(foundedNews)
+        // 					foundedNews.headimg = xx.source_url;
+        // 			}); 
+        // 		}
+        // 	});
+        // };	
         var obs2 = this.newsService.GetNewsCat();
-        obs2.subscribe(function (cn) {
-            _this.Cat = cn;
-            // console.log(this.Cat); 			
+        obs2.subscribe(function (ic) {
+            _this.Cat = ic;
         });
-        var obs3 = this.newsService.GetNewsImg();
-        obs3.subscribe(function (im) {
-            _this.ImgN = im;
-            console.log(_this.ImgN);
-        });
-        rxjs_compat_1.Observable.forkJoin([obs1, obs2, obs3]).subscribe(function () {
+        // var obs3 = this.newsService.GetNewsImg();
+        // obs3.subscribe( im => {
+        // 	this.ImgN = im;
+        // 	console.log(this.ImgN);
+        // })
+        rxjs_compat_1.Observable.forkJoin([obs1, obs2]).subscribe(function () {
             _this.IsVisiblePreloader = false;
         });
+    }
+    AllNewsComponent.prototype.More = function (click) {
+        console.log(click);
+        this.newPage = this.newPage + 1;
+        contNewsrestart();
+    };
+    AllNewsComponent.prototype.getNewsByFeaturedMediaId = function (mediaId) {
+        for (var i = 0; i < this.News.length; i++) {
+            if (this.News[i].featured_media == mediaId)
+                return this.News[i];
+        }
+        return null;
     };
     AllNewsComponent.prototype.getcategorynamebyid = function (id) {
         for (var i = 0; i < this.Cat.length; i++) {
@@ -50,22 +77,15 @@ var AllNewsComponent = /** @class */ (function () {
         }
         return '';
     };
-    AllNewsComponent.prototype.getnewsbyid = function (idd) {
-        for (var d = 0; d < this.News.length; d++) {
-            if (this.Cat[i].id == id) {
-                return this.Cat[i].name;
-            }
-            console.log(this.News[d].id);
-        }
+    AllNewsComponent.prototype.ngOnInit = function () {
     };
-    ;
     AllNewsComponent = __decorate([
         core_1.Component({
             selector: 'app-all-news',
             templateUrl: './all-news.component.html',
             providers: [news_service_1.NewsService]
         }),
-        __metadata("design:paramtypes", [news_service_1.NewsService])
+        __metadata("design:paramtypes", [news_service_1.NewsService, http_1.Http])
     ], AllNewsComponent);
     return AllNewsComponent;
 }());

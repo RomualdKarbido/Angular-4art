@@ -4,8 +4,8 @@
     flex: 0 0 360px;
     position: relative;
     &-fix {
-      position: fixed;
-      width: 275px;
+      // position: fixed;
+      // width: 275px;
     }
     &-title {
       font-size: 20px;
@@ -13,7 +13,7 @@
       font-weight: bold;
       margin-bottom: $sp*2;
       border-bottom: 2px solid $gold;
-      // margin-right: 85px;
+      margin-right: 85px;
       padding-bottom: 10px;
     }
   }
@@ -29,9 +29,11 @@
       }
     }
     &-date {
-      margin-top: 12px;
+      margin-top: 17px;
       color: $black;
       margin-left: $sp;
+      font-size: 14px;
+      opacity: 0.8;
       &:before {
         content: "\F0F5";
         font-family: "Material Design Icons";
@@ -65,14 +67,26 @@
         margin-top: 0;
       }
     }
+    h2 {
+      font-weight: bold;
+      margin-bottom: $sp;
+      font-size: 22px;
+      margin-top: 30px;
+      &:first-child {
+        margin-top: 0;
+      }
+    }
+    strong {
+      font-weight: 700;
+    }
   }
   &__last {
     &-item {
       display: flex;
       align-items: flex-start;
       border-bottom: 1px solid #E0E0E0;
-      // margin-right: 85px;
-      padding: 10px 0;
+      margin-right: 85px;
+      padding: 13px 0;
       outline: none;
       cursor: pointer;
       &:hover {
@@ -108,7 +122,7 @@
       font-size: 14px;
       color: lighten($black, 15%);
       margin-left: 15px;
-      font-weight: bold;
+      // font-weight: bold;
       transition: all 0.2s;
     }
   }

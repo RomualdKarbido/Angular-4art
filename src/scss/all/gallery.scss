@@ -1,0 +1,27 @@
+.gallery {
+	display: flex;
+	flex-wrap: wrap;
+	margin-bottom: -$sp;
+	&-item {
+		margin-right: $sp;
+		width: calc((100% - 60px) / 4);
+		margin-bottom: 10px;
+		opacity: 0.9;
+		transition: all 0.2s;
+		&:hover {
+			opacity: 1;
+		}
+		a {
+			display: block;
+		}
+		&:nth-child(4n) {
+			margin-right: 0;
+		}
+		img {
+			width: 100%;
+			height: auto;
+			margin-bottom: 0;
+			
+		}
+	}
+}

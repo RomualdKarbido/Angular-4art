@@ -13,8 +13,9 @@ import {Observable} from 'rxjs';
 export class NewsService {
 	constructor(private http: Http) {}
 
-	GetNews(){
-		return this.http.get('http://www.nd-ms.ru/wp-json/wp/v2/posts?per_page=9')
+	GetNews(newsPage: number){
+	// GetNews(){
+		return this.http.get('http://www.nd-ms.ru/wp-json/wp/v2/posts?per_page=9&page=' + newsPage)
 			.map(response => response.json());
 	}
 	GetNewsCat(){
@@ -23,6 +24,6 @@ export class NewsService {
 	}
 	GetNewsImg(){
 		return this.http.get('http://www.nd-ms.ru/wp-json/wp/v2/media')
-    .map(response => response.json());
+    		.map(response => response.json());
 	}
 }

@@ -12,30 +12,25 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs-compat/add/operator/map");
-var NewsService = /** @class */ (function () {
-    function NewsService(http) {
+var OneNewsService = /** @class */ (function () {
+    function OneNewsService(http) {
         this.http = http;
     }
-    NewsService.prototype.GetNews = function (newsPage) {
-        // GetNews(){
-        return this.http.get('http://www.nd-ms.ru/wp-json/wp/v2/posts?per_page=9&page=' + newsPage)
+    OneNewsService.prototype.GetOneNews = function (newsId) {
+        return this.http.get('http://www.nd-ms.ru/wp-json/wp/v2/posts/' + newsId)
             .map(function (response) { return response.json(); });
     };
-    NewsService.prototype.GetNewsCat = function () {
-        return this.http.get('http://www.nd-ms.ru/wp-json/wp/v2/categories')
+    OneNewsService.prototype.GetNews = function () {
+        return this.http.get('http://www.nd-ms.ru/wp-json/wp/v2/posts?per_page=12')
             .map(function (response) { return response.json(); });
     };
-    NewsService.prototype.GetNewsImg = function () {
-        return this.http.get('http://www.nd-ms.ru/wp-json/wp/v2/media')
-            .map(function (response) { return response.json(); });
-    };
-    NewsService = __decorate([
+    OneNewsService = __decorate([
         core_1.Injectable({
             providedIn: 'root'
         }),
         __metadata("design:paramtypes", [http_1.Http])
-    ], NewsService);
-    return NewsService;
+    ], OneNewsService);
+    return OneNewsService;
 }());
-exports.NewsService = NewsService;
-//# sourceMappingURL=news.service.js.map
+exports.OneNewsService = OneNewsService;
+//# sourceMappingURL=one-news.service.js.map

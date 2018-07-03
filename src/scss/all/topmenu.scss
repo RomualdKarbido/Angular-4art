@@ -66,6 +66,28 @@
 		&_art {
 			border-right: none;
 		}
+		&_home {
+			.topmenu__item {
+				&:first-child {
+					.topmenu__item-link {
+						display: block;
+						width: 20px;
+						height: 20px;
+						&:before  {
+							content: "\F6A0";
+							font-family: "Material Design Icons";
+							position: relative;
+							width: 20px;
+							height: 20px;	
+							font-size: 18px;
+							top: -1px
+						}
+
+					}
+					
+				}
+			}
+		}
 		&_language {
 			.topmenu__item {
 				&:after {

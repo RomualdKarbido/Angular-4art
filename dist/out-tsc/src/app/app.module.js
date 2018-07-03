@@ -16,11 +16,13 @@ var all_news_component_1 = require("./all-news/all-news.component");
 var home_page_component_1 = require("./home-page/home-page.component");
 var static_page_component_1 = require("./static-page/static-page.component");
 var art_component_1 = require("./art/art.component");
+var one_news_component_1 = require("./one-news/one-news.component");
 var routes = [
     { path: '', component: home_page_component_1.HomePageComponent },
     { path: 'all_news', component: all_news_component_1.AllNewsComponent },
     { path: 'page/:sublink', component: static_page_component_1.StaticPageComponent },
-    { path: 'art/:sublink', component: art_component_1.ArtComponent }
+    { path: 'art/:sublink', component: art_component_1.ArtComponent },
+    { path: 'all_news/news/:id', component: one_news_component_1.OneNewsComponent }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -33,7 +35,8 @@ var AppModule = /** @class */ (function () {
                 all_news_component_1.AllNewsComponent,
                 home_page_component_1.HomePageComponent,
                 static_page_component_1.StaticPageComponent,
-                art_component_1.ArtComponent
+                art_component_1.ArtComponent,
+                one_news_component_1.OneNewsComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule,

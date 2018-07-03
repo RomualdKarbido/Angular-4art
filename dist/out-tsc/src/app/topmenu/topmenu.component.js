@@ -15,7 +15,7 @@ var TopmenuComponent = /** @class */ (function () {
     function TopmenuComponent(router) {
         this.router = router;
         this.TopMenulist = [
-            { name: 'Главная', link: '/' },
+            { name: '', link: '/' },
             { name: 'Контакты', link: '/page/contact' },
             { name: 'Новости', link: '/all_news' }
         ];
@@ -29,7 +29,7 @@ var TopmenuComponent = /** @class */ (function () {
     TopmenuComponent.prototype.ngOnInit = function () {
     };
     TopmenuComponent.prototype.isActiveMenuItem = function (menu) {
-        return menu.link == this.router.url;
+        return this.router.url.indexOf(menu.link) != -1 && menu.link != '/';
     };
     TopmenuComponent.prototype.isActiveArtItem = function (art) {
         return art.link == this.router.url;
