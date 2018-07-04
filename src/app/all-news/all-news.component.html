@@ -3,12 +3,15 @@
 </div>
 
 <div class="all-news">
-	<h1>Архив новостей</h1> 
+	<h1>Архив новостей</h1>
 
 
 	<div class="all-news__list">
 		<div class="all-news__item"  *ngFor='let newsItem of News'>
-			<div routerLink="{{ '/all_news/news/' + newsItem.id }}" class="all-news__item-link">
+			<div 	class="all-news__item-link"
+						routerLink="{{ '/all_news/news/' + newsItem.id }}"
+						(click)="scrollToTop()"
+			>
 				<div 	class="all-news__item-img"
 						[ngStyle]="{'background-image': 'url(' + newsItem.headimg  + ')'}"></div>
 				<div class="all-news__item-wrap" >
@@ -43,9 +46,9 @@
 		</div>
 	</div>
 	<div class="all-news__page">Стр - {{ newPage }}</div>
-	
-	<div class="all-news__preloader-wrap">
-		<div class="all-news__preloader" (click) = "More()">
+
+	<div class="btn-wrap">
+		<div class="btn" (click) = "More()">
 			 Загрузить еще...
 		</div>
 	</div>

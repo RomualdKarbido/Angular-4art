@@ -1,14 +1,48 @@
 .content {
-	padding: 50px 0 100px;
+	padding: 50px 0 $footer-h;
 	background: white;
-	min-height: calc(100vh - #{$header-h} - 100px);
+	// min-height: calc(100vh - #{$header-h} - #{$footer-h});
 	margin: 0 auto;
-	margin-top: 100px;
+	// margin-top: 100px;
 	max-width: 1200px;
+  box-sizing: border-box;
 	h1 {
 		font-size: 34px;
 		font-weight: 700;
 		color: $black;
 		margin-bottom: 45px;
 	}
+	p {
+    margin-bottom: $sp;
+    line-height: 1.4;
+  }
+  img {
+    margin-bottom: $sp;
+    border-radius: 3px;
+    max-width: 100%;
+  }
+  a {
+    color: $gold;
+  }
+  h3 {
+    font-weight: bold;
+    margin-bottom: $sp;
+    font-size: 18px;
+    margin-top: 30px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  h2 {
+    font-weight: bold;
+    margin-bottom: $sp;
+    font-size: 22px;
+    margin-top: 30px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+  strong {
+    font-weight: 700;
+  }
 }

@@ -26,6 +26,10 @@ export class AllNewsComponent implements OnInit {
 	ImgNewsID = [];
 	linkImg = [];
 
+	scrollToTop(e, outlet){
+		outlet.scrollTop = 0;
+	}
+
 	public IsVisiblePreloader: boolean = true;
 	public newPage: number = 1;
 	public More(click) { 
@@ -57,7 +61,7 @@ export class AllNewsComponent implements OnInit {
 	}
 
 	constructor(private newsService: NewsService, private http: Http) {
-		 
+		
 		var obs1 = this.newsService.GetNews(this.newPage); 
 		obs1.subscribe( i => {
 			this.News = i;
@@ -66,7 +70,7 @@ export class AllNewsComponent implements OnInit {
 			for(var r=0; r<this.News.length; r++) {
 				this.linkImg[r] = 'http://www.nd-ms.ru/wp-json/wp/v2/media/' + this.News[r].featured_media;
 				console.log('запрос на img - ' + ' -' + this.linkImg[r]);
-			
+				
 				var obs5 = this.http.get(this.linkImg[r]).map(response => response.json());
 				obs5.subscribe( xx => {
 					var foundedNews = this.getNewsByFeaturedMediaId(xx.id);
@@ -107,6 +111,7 @@ export class AllNewsComponent implements OnInit {
 		}
 		return '';
 	}
+
 
 
 	ngOnInit() {

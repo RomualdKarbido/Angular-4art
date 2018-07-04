@@ -17,50 +17,66 @@ var http_1 = require("@angular/http");
 // import 'rxjs-compat/add/operator/map'
 var AllNewsComponent = /** @class */ (function () {
     function AllNewsComponent(newsService, http) {
-        // contNewsrestart(){
-        // 	var obs1 = this.newsService.GetNews(this.newPage); 
         var _this = this;
         this.newsService = newsService;
         this.http = http;
         this.News = [];
+        this.News2 = [];
         this.Cat = [];
         this.ImgN = [];
         this.ImgNewsID = [];
         this.linkImg = [];
         this.IsVisiblePreloader = true;
         this.newPage = 1;
-        // 	obs1.subscribe( i => {
-        // 		this.News = i;
-        // 		console.log(this.News);
-        // 		for(var r=0; r<this.News.length; r++) {
-        // 			this.linkImg[r] = 'http://www.nd-ms.ru/wp-json/wp/v2/media/' + this.News[r].featured_media;
-        // 			console.log('запрос на img - ' + ' -' + this.linkImg[r]);
-        // 			var obs5 = this.http.get(this.linkImg[r]).map(response => response.json());
-        // 			obs5.subscribe( xx => {
-        // 				var foundedNews = this.getNewsByFeaturedMediaId(xx.id);
-        // 				if(foundedNews)
-        // 					foundedNews.headimg = xx.source_url;
-        // 			}); 
-        // 		}
-        // 	});
-        // };	
+        var obs1 = this.newsService.GetNews(this.newPage);
+        obs1.subscribe(function (i) {
+            _this.News = i;
+            console.log(_this.News);
+            for (var r = 0; r < _this.News.length; r++) {
+                _this.linkImg[r] = 'http://www.nd-ms.ru/wp-json/wp/v2/media/' + _this.News[r].featured_media;
+                console.log('запрос на img - ' + ' -' + _this.linkImg[r]);
+                var obs5 = _this.http.get(_this.linkImg[r]).map(function (response) { return response.json(); });
+                obs5.subscribe(function (xx) {
+                    var foundedNews = _this.getNewsByFeaturedMediaId(xx.id);
+                    if (foundedNews)
+                        foundedNews.headimg = xx.source_url;
+                });
+            }
+        });
         var obs2 = this.newsService.GetNewsCat();
         obs2.subscribe(function (ic) {
             _this.Cat = ic;
         });
-        // var obs3 = this.newsService.GetNewsImg();
-        // obs3.subscribe( im => {
-        // 	this.ImgN = im;
-        // 	console.log(this.ImgN);
-        // })
         rxjs_compat_1.Observable.forkJoin([obs1, obs2]).subscribe(function () {
             _this.IsVisiblePreloader = false;
         });
     }
+    AllNewsComponent.prototype.scrollToTop = function (e, outlet) {
+        outlet.scrollTop = 0;
+    };
     AllNewsComponent.prototype.More = function (click) {
-        console.log(click);
+        var _this = this;
+        this.IsVisiblePreloader = true;
         this.newPage = this.newPage + 1;
-        contNewsrestart();
+        var obs1 = this.newsService.GetNews(this.newPage);
+        obs1.subscribe(function (i) {
+            _this.News2 = i;
+            for (var g = 0; g < _this.News2.length; g++) {
+                _this.News.push(_this.News2[g]);
+            }
+            for (var r = 0; r < _this.News.length; r++) {
+                _this.linkImg[r] = 'http://www.nd-ms.ru/wp-json/wp/v2/media/' + _this.News[r].featured_media;
+                var obs5 = _this.http.get(_this.linkImg[r]).map(function (response) { return response.json(); });
+                obs5.subscribe(function (xx) {
+                    var foundedNews = _this.getNewsByFeaturedMediaId(xx.id);
+                    if (foundedNews)
+                        foundedNews.headimg = xx.source_url;
+                });
+            }
+        });
+        rxjs_compat_1.Observable.forkJoin([obs1]).subscribe(function () {
+            _this.IsVisiblePreloader = false;
+        });
     };
     AllNewsComponent.prototype.getNewsByFeaturedMediaId = function (mediaId) {
         for (var i = 0; i < this.News.length; i++) {

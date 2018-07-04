@@ -14,7 +14,7 @@ import { ArtComponent } from './art/art.component';
 import { OneNewsComponent } from './one-news/one-news.component';
 
 const routes = [
-  {path: '', component: HomePageComponent},
+  {path: '', component: HomePageComponent}, 
   {path: 'all_news', component: AllNewsComponent},
   {path: 'page/:sublink', component: StaticPageComponent},
   {path: 'art/:sublink', component: ArtComponent},

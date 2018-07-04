@@ -35,18 +35,18 @@ export class OneNewsComponent implements OnInit {
           this.OneNews = i;
           console.log(this.OneNews);
         });
-        var obs2 = this.OneNewsService.GetNews();
-        obs2.subscribe( d => {
-          this.NewsLeft = d;
-          console.log(this.NewsLeft);
-        });
 
         // условия для прелоадера
-        Observable.forkJoin([obs1, obs2]).subscribe(() => {
-        this.IsVisiblePreloader = false;
-      })
-       // In a real app: dispatch action to load the details here.
+        Observable.forkJoin([obs1]).subscribe(() => {
+          this.IsVisiblePreloader = false;
+        })
     });
+    
+    var obs2 = this.OneNewsService.GetNews();
+    obs2.subscribe( d => {
+      this.NewsLeft = d;
+      console.log(this.NewsLeft);
+    });  
   }
 
   isActiveMenuItem(menu: any) {

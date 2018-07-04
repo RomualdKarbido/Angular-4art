@@ -30,30 +30,22 @@ var OneNewsComponent = /** @class */ (function () {
             obs1.subscribe(function (i) {
                 _this.OneNews = i;
                 console.log(_this.OneNews);
+                // условия для прелоадера
+                rxjs_compat_1.Observable.forkJoin([obs1]).subscribe(function () {
+                    _this.IsVisiblePreloader = false;
+                });
+                // In a real app: dispatch action to load the details here.
             });
-            var obs2 = _this.OneNewsService.GetNews();
-            obs2.subscribe(function (d) {
-                _this.NewsLeft = d;
-                console.log(_this.NewsLeft);
-            });
-            // условия для прелоадера
-            rxjs_compat_1.Observable.forkJoin([obs1, obs2]).subscribe(function () {
-                _this.IsVisiblePreloader = false;
-            });
-            // In a real app: dispatch action to load the details here.
-        });
+        }, isActiveMenuItem(menu, any), {
+            return: '/all_news/news/' + menu.id == this.router.url,
+            console: .log(menu.id + 'sdfsf')
+        }, ngOnInit(), {});
     }
     OneNewsComponent.prototype.IdBtn = function (event) {
         console.log('IdBtn - ', event);
         this.IsVisiblePreloader = true;
         // event = true;
         // return event == this.router.url;
-    };
-    OneNewsComponent.prototype.isActiveMenuItem = function (menu) {
-        return '/all_news/news/' + menu.id == this.router.url;
-        console.log(menu.id + 'sdfsf');
-    };
-    OneNewsComponent.prototype.ngOnInit = function () {
     };
     OneNewsComponent = __decorate([
         core_1.Component({

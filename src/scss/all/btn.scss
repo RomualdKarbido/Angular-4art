@@ -1,0 +1,30 @@
+.btn {
+  text-align: center;
+  padding: 20px 60px;
+  border: 1px dotted $gray-light;
+  display: inline-block;
+  transition: all 0.2s;
+  border-radius: 50px;
+  cursor: pointer;
+  outline: none;
+  color: $gray-light;
+  position: relative;
+  &-wrap {
+    display: flex;
+    justify-content: center;
+  }
+  &:hover {
+    color: $gold;
+    border-color: $gold;
+  }
+  &_icon {
+    padding: 20px 35px 20px 70px;
+    i {
+      margin-right: $sp;
+      font-size: 22px;
+      position: absolute;
+      top: 18px;
+      left: 20px;
+    }
+  }
+}

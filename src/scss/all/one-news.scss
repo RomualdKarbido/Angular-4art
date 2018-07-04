@@ -1,5 +1,6 @@
 .one-news {
   display: flex;
+  margin-top: 100px;
   &__leftmenu {
     flex: 0 0 360px;
     position: relative;
@@ -11,7 +12,7 @@
       font-size: 20px;
       color: $black;
       font-weight: bold;
-      margin-bottom: $sp*2;
+      margin-bottom: $sp*2 !important;
       border-bottom: 2px solid $gold;
       margin-right: 85px;
       padding-bottom: 10px;
@@ -47,40 +48,9 @@
     line-height: 1.2;
     color:$black;
     margin-bottom: $sp*5;
-    p {
-      margin-bottom: $sp;
-    }
-    img {
-      margin-bottom: $sp;
-      border-radius: 3px;
-      max-width: 100%;
-    }
-    a {
-      color: $gold;
-    }
-    h3 {
-      font-weight: bold;
-      margin-bottom: $sp;
-      font-size: 18px;
-      margin-top: 30px;
-      &:first-child {
-        margin-top: 0;
-      }
-    }
-    h2 {
-      font-weight: bold;
-      margin-bottom: $sp;
-      font-size: 22px;
-      margin-top: 30px;
-      &:first-child {
-        margin-top: 0;
-      }
-    }
-    strong {
-      font-weight: 700;
-    }
   }
   &__last {
+    animation: vizible  .7s;
     &-item {
       display: flex;
       align-items: flex-start;
@@ -94,7 +64,7 @@
           color: black;
           border-color: black;
         }
-        .one-news__last-name { 
+        .one-news__last-name {
             color: black;
         }
       }
@@ -124,6 +94,46 @@
       margin-left: 15px;
       // font-weight: bold;
       transition: all 0.2s;
+    }
+  }
+  &__footer {
+		display: flex;
+    align-items: center;
+    height: 145px;
+    border-top: 1px solid $gray-light;
+    &-left {
+      flex: 0 0 360px;
+      display: flex;
+    }
+		&-right {
+      flex: 1;
+			display: flex;
+      justify-content: center;
+      align-items: center;
+      i {
+        font-size: 26px;
+      }
+      .mdi-record {
+        font-size: 10px;
+      }
+		}
+	}
+  &__paginator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    i {
+      font-size: 30px;
+    }
+    .mdi-record {
+      font-size: 10px;
+    }
+    .mdi-chevron-left, .mdi-chevron-right {
+      cursor: pointer;
+      transition: all 0.2s;
+      &:hover {
+        color: $gold;
+      }
     }
   }
 }

@@ -9,7 +9,7 @@ export class TopmenuComponent implements OnInit {
 
 
 	TopMenulist = [
-		{name: ' ' , link: '/'},
+		{name: ' ' , link: '/'}, 
 		{name: 'Контакты', link: '/page/contact'},
 		{name: 'Новости', link: '/all_news'}
 	]
