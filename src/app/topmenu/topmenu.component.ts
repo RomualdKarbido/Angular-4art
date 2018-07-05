@@ -18,14 +18,14 @@ export class TopmenuComponent implements OnInit {
 		{name: 'Евгений Расторгуев', link: '/art/er'},
 		{name: 'Тамара Гусева', link: '/art/tg'},
 		{name: 'Людмила Варламова', link: '/art/lv'},
-		{name: 'Наталья Варламова', link: '/art/nv'}
+		{name: 'Наталья Варламова', link: '/art/nv'} 
 	]
 
 	constructor(private router:Router) {}
 
-	ngOnInit() {
+	// ngOnInit() {
 
-	}
+	// }
 
 
 

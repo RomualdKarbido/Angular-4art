@@ -1,18 +1,52 @@
 <div class="home-wrap">
-	<div class="top-slider"></div>
+	<div class="home__info">
+		<div class="home__info-wrap">
+			<div class="home__info-logo"></div>
+			<div class="home__info-text"> 
+				Сайт посвященный 4м художникам, <br>
+				жившим в разную эпоху. Но составляющих одно целое
+			</div>
+			<div class="btn btn_gold home__info-btn">Подробнее</div>
+		</div>
+	</div>
+	<div class="top-slider">
+		<div class="top-slider__item" style="background: url(../../assets/slider/bg-sl1.jpg) no-repeat;"> 
+			
+		</div>
+	</div>
+
+	<!-- меню художников -->
 	<div class="home-menu">
-		<div class="home-menu__item">Евгений Расторгуев</div>
-		<div class="home-menu__item">Евгений Расторгуев</div>
-		<div class="home-menu__item">Евгений Расторгуев</div>
-		<div class="home-menu__item">Наталья Варламова</div>
+		<div class="home-menu__item" *ngFor="let menu of MenuArts">
+			<div class="home-menu__link" routerLink="{{ menu.link }}">
+				{{ menu.name }} 
+			</div>
+		</div>
 	</div>
-	<div class="search-block"></div>
-	<div class="tiles">
-		<div class="tiles__item">Евгений Расторгуев</div>
-		<div class="tiles__item">Евгений Расторгуев</div>
-		<div class="tiles__item">Евгений Расторгуев</div>
-		<div class="tiles__item">Евгений Расторгуев</div>
+
+	<!-- поиск -->
+	<div class="search-block">
+		<div class="search-block__box">
+			<div class="search-block__input"><input type="text"></div>
+			<div class="btn  btn_icon btn_search "><i class="mdi mdi-magnify"></i> Искать</div>
+		</div>
 	</div>
+
+	<!-- плитки -->
+	<div class="tiles" >
+		<div class="tiles__item" routerLink="{{ menu.link }}" *ngFor="let menu of MenuArts"> 
+			<div class="tiles__wrap">
+				<div class="tiles__name">{{ menu.name }}</div>
+				
+				<div class="tiles__merit">Заслуженный деятель искусств России,живописец, <br> график-иллюстратор, скульптор.</div>
+
+
+			</div>
+
+		</div>
+	</div>
+
+
 	<div class="news-slider">
 		<h3>Новости</h3>
 		<div class="Архив"></div>

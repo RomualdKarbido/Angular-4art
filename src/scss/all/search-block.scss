@@ -1,0 +1,18 @@
+.search-block { 
+	background: #F8F6F2;
+	height: 140px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  &__box {
+    margin: 0 auto;
+    max-width: 1200px;
+    display: flex;
+    flex: 1;
+
+  }
+  &__input {
+	flex: 1;
+  margin-right: $sp;
+  }
+}

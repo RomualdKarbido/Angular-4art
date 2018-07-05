@@ -3,10 +3,13 @@ $red: #f44336; //красный цвет
 $black: #4A4A4A; //почти черный
 $gray: #F8F6F2; //серо-желтый
 $gray-light: #A5A5A5; //светосерый
-$gold: #AE9671; //золотой
+$gold: #AE9671; //золотой светлый
+$gold-h: #D6A352; //золотой
 $header-h: 100px;
 $footer-h: 330px;
-
+.trans {
+  transition: all 0.2s;
+}
 
 
 //animation: vizible  .3s;

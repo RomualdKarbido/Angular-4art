@@ -1,4 +1,12 @@
 .top-slider {
 	height: 100vh;
-	background: black;
+	background: #2D2D2D; 
+	position: relative;
+	&__item {
+		background-size: cover !important;
+		background-position: center !important;
+		height: 100vh;
+		width: 100%;
+		opacity: 0.3; 
+	}
 }

@@ -1,0 +1,35 @@
+.home-menu {
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 215px;
+	display: flex;
+	border-top: 1px solid $gold;
+	&__item {
+		flex: 1;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		color: white;
+		&:first-child {
+			.home-menu__link {
+				border: none;
+			}
+		}
+	}
+	&__link {
+		text-transform: uppercase;
+		line-height: 135px;
+		border-left: 1px solid $gold;
+		text-align: center;
+		flex: 1;
+		cursor: pointer;
+		outline: none;
+		@extend .trans;
+		&:hover {
+			color: $gold;
+		}
+
+	}
+}
