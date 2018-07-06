@@ -11,7 +11,13 @@
 	</div>
 	<div class="top-slider">
 		<div class="top-slider__item" style="background: url(../../assets/slider/bg-sl1.jpg) no-repeat;"> 
-			
+			<div class="top-slider__text">«Троица» из серии «Часовня духа» 2005г.</div>
+		</div>
+		<div class="top-slider__item" style="background: url(../../assets/slider/bg-2.jpg) no-repeat;"> 
+			<div class="top-slider__text">«Арлекин с раковинами» из серии «Часовня духа» 2005г.</div>
+		</div>
+		<div class="top-slider__item" style="background: url(../../assets/slider/bg-3.jpg) no-repeat;"> 
+			<div class="top-slider__text">«Лежащая и раковины» из серии «Часовня духа» 2005г.</div>
 		</div>
 	</div>
 
@@ -46,10 +52,41 @@
 		</div>
 	</div>
 
-
+	<!-- Новостной слайде -->
 	<div class="news-slider">
 		<h3>Новости</h3>
-		<div class="Архив"></div>
+		<div [routerLink]="['/all_news']" class="news-slider__link">Архив</div>
+		<div class="news-slider__wrap">
+
+			<div class="all-news__item"  *ngFor='let newsItem of News'>
+				<div class="all-news__item-link">
+					<div class="all-news__item-img"
+						 [ngStyle]="{'background-image': 'url(' + newsItem.headimg  + ')'}"
+						  routerLink="{{ '/all_news/news/' + newsItem.id }}"
+						  (click)="scrollToTop()" 
+						 ></div>
+					<div class="all-news__item-wrap" >
+						<div class="all-news__item-title" [innerHTML]="newsItem.title.rendered"></div>
+						<div class="all-news__item-text" [innerHTML]="newsItem.excerpt.rendered"></div>
+						<div class="all-news__item-footer">
+							<div class="all-news__item-date"><i class="mdi mdi-calendar-today"></i>
+								{{ newsItem.date_gmt | date:'MM.dd.yyyy'}}
+							</div>
+							<div class="all-news__item-tag-left">
+								<div class="all-news__item-tag"
+									*ngIf="newsItem.categories.length > 0">
+
+									{{ getcategorynamebyid(newsItem.categories) }}
+
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+
+		</div>
 	</div>
 	<div class="fitback">
 		<h3>Обратная связь</h3>

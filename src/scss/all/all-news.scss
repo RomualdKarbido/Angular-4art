@@ -28,7 +28,7 @@
 		}
 		&-link {
 			cursor: pointer;
-			outlile: none;
+			outline: none;
 		}
 		&-img {
 			// background: black url(/assets/img/test.jpg) no-repeat;
@@ -38,6 +38,7 @@
 			overflow: hidden;
 			background-position: center;
 			color: white;
+			outline: none;
 
 		}
 		&-wrap {

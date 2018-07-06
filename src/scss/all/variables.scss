@@ -8,8 +8,9 @@ $gold-h: #D6A352; //золотой
 $header-h: 100px;
 $footer-h: 330px;
 .trans {
-  transition: all 0.2s;
+  transition: all 0.2s; // @extend .trans;
 }
+
 
 
 //animation: vizible  .3s;

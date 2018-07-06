@@ -35,4 +35,6 @@ export class TopmenuComponent implements OnInit {
 	isActiveArtItem(art: any) {
 		return art.link == this.router.url;
 	}
+	ngOnInit() {
+	}
 }

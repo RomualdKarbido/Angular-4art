@@ -6,7 +6,75 @@
 		background-size: cover !important;
 		background-position: center !important;
 		height: 100vh;
-		width: 100%;
-		opacity: 0.3; 
+		width: 100vw;
+		// opacity: 1; 
+		position: relative;
+		&:before {
+			content: '';
+			background: rgba(#2D2D2D, 0.8);
+			position: absolute;
+			top: 0;
+			right: 0;
+			left: 0;
+			bottom: 0;
+		}
+
 	}
+	&__text {
+		font-size: 12px;
+		color: #7B7C7D;
+		// color: white;
+		opacity: 1;
+		position: absolute;
+		bottom: 255px;
+		width: 100vw;
+		text-align: center;
+	}
+	.slick-arrow {
+		display: block;
+		font-size: 0;
+		line-height: 0;
+		height: 40px;
+		width: 40px;
+		flex: 0  0 40px;
+		border: none;
+		outline: none;
+		padding: 0;
+		margin: 0;
+		position: absolute;
+		top: 35%;
+		left: $sp*2;
+		right: auto;
+		cursor: pointer;
+		background: none;
+		opacity: 0.2;
+		z-index: 100;
+		&:hover {
+			&:before {
+				color: $gold;
+			}
+		}
+		&:before {
+			content: "\F141";
+			color: white;
+			font-family: "Material Design Icons";
+			position: absolute;
+			top: 0;
+			left: 0;
+			font-size: 40px;
+			line-height: 1;
+			@extend .trans;
+			&:hover {
+				color: $gold;
+			}
+		}
+		&.slick-next {
+			left: auto;
+			right: $sp*2;
+			&:before {
+				content: "\F142";
+			}	
+		}
+	}
+	
 }

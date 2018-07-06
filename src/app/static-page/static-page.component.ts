@@ -6,8 +6,8 @@ import { Router } from '@angular/router';
 
 @Component({
 	selector: 'app-static-page',
-	templateUrl: './static-page.component.html'
-	providers:[StaticPageService],
+	templateUrl: './static-page.component.html',
+	providers:[StaticPageService]
 })
 
 
@@ -19,8 +19,7 @@ export class StaticPageComponent implements OnInit {
 	public IsVisiblePreloader: boolean = true; //прелоадер
 
 	IdBtn(event) {
-		console.log('IdBtn - 'event);
-		this.IsVisiblePreloader = true;
+		this.IsVisiblePreloader = true; 
 	}
 
 
@@ -51,7 +50,6 @@ export class StaticPageComponent implements OnInit {
 
 	isActiveMenuItem(menu: any) {
 		return '/all_news/news/' + menu.id == this.router.url;
-		console.log(menu.id + 'sdfsf');
 	}
 
 	ngOnInit() {

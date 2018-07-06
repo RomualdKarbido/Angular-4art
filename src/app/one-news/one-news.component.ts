@@ -16,7 +16,6 @@ export class OneNewsComponent implements OnInit {
   public IsVisiblePreloader: boolean = true; //прелоадер
 
   IdBtn(event) { 
-    console.log('IdBtn - 'event);
     this.IsVisiblePreloader = true;
    
     // event = true;
@@ -51,7 +50,6 @@ export class OneNewsComponent implements OnInit {
 
   isActiveMenuItem(menu: any) {
       return '/all_news/news/' + menu.id == this.router.url; 
-      console.log(menu.id + 'sdfsf'); 
    }
 
   ngOnInit() {
