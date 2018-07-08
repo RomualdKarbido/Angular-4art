@@ -1,0 +1,582 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ce",
+				"center\tjustify-content"
+			],
+			[
+				"c",
+				"contain\tbackground-size"
+			],
+			[
+				"list",
+				"list-style\tproperty"
+			],
+			[
+				"di",
+				"display\tproperty"
+			],
+			[
+				"inline",
+				"inline-block\tdisplay"
+			],
+			[
+				"mar",
+				"margin\tproperty"
+			],
+			[
+				"po",
+				"pointer\tcursor"
+			],
+			[
+				"de",
+				"default\tcursor"
+			],
+			[
+				"st",
+				"saturate\tless color-operations"
+			],
+			[
+				"ba",
+				"background"
+			],
+			[
+				"max",
+				"max-width\tproperty"
+			],
+			[
+				"bo",
+				"bottom\tproperty"
+			],
+			[
+				"re",
+				"relative\tposition"
+			],
+			[
+				"op",
+				"opacity\tproperty"
+			],
+			[
+				"ove",
+				"overflow\tproperty"
+			],
+			[
+				"flex",
+				"flex-wrap\tproperty"
+			],
+			[
+				"bac",
+				"background-size"
+			],
+			[
+				"i",
+				"img/"
+			],
+			[
+				"a",
+				"assets/"
+			],
+			[
+				"bor",
+				"border\tproperty"
+			],
+			[
+				"cu",
+				"cursor"
+			],
+			[
+				"nu",
+				"number\tkeyword"
+			],
+			[
+				"font-s",
+				"font-size"
+			],
+			[
+				"get",
+				"getNewsByFeaturedMediaId\tmethod"
+			],
+			[
+				"news",
+				"News\tproperty"
+			],
+			[
+				"con",
+				"console\tvar"
+			],
+			[
+				"col",
+				"column\tflex-direction"
+			],
+			[
+				"min",
+				"min-width\tproperty"
+			],
+			[
+				"bacg",
+				"background\tproperty"
+			],
+			[
+				"sp",
+				"space-between\tjustify-content"
+			],
+			[
+				"b",
+				"border-box\tbox-sizing"
+			],
+			[
+				"box",
+				"box-sizing\tproperty"
+			],
+			[
+				"pa",
+				"padding\tproperty"
+			],
+			[
+				"abs",
+				"absolute\tposition"
+			],
+			[
+				"bl",
+				"block\tdisplay"
+			],
+			[
+				"background-c",
+				"background-color"
+			],
+			[
+				"obs",
+				"obs3\tlocal var"
+			],
+			[
+				"rs",
+				"rxjs-compat\texternal module name"
+			],
+			[
+				"ret",
+				"return\tkeyword"
+			],
+			[
+				"r",
+				"rxjs\texternal module name"
+			],
+			[
+				"impo",
+				"import\tkeyword"
+			],
+			[
+				"o",
+				"operator\tdirectory"
+			],
+			[
+				"fu",
+				"function\tkeyword"
+			],
+			[
+				"bacr",
+				"background\tproperty"
+			],
+			[
+				"bacgr",
+				"background\tproperty"
+			],
+			[
+				"fon",
+				"font-size"
+			],
+			[
+				"wi",
+				"width"
+			],
+			[
+				"g",
+				"greet"
+			],
+			[
+				"co",
+				"cover\tbackground-size"
+			],
+			[
+				"font",
+				"font-size\tproperty"
+			],
+			[
+				"box-s",
+				"box-shadow\tproperty"
+			],
+			[
+				"border-co",
+				"border-color\tproperty"
+			],
+			[
+				"inl",
+				"inline-block\tdisplay"
+			],
+			[
+				"u",
+				"url()\tbackground"
+			],
+			[
+				"border-c",
+				"border-color\tproperty"
+			],
+			[
+				"cur",
+				"cursor\tproperty"
+			],
+			[
+				"wid",
+				"width\tproperty"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"pos",
+				"position\tproperty"
+			],
+			[
+				"fo",
+				"font-size\tproperty"
+			],
+			[
+				"fl",
+				"float\tproperty"
+			],
+			[
+				"n",
+				"nowrap\twhite-space"
+			],
+			[
+				"alig",
+				"align-items\tproperty"
+			],
+			[
+				"p",
+				"position\tproperty"
+			],
+			[
+				"z",
+				"z-index\tproperty"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 136.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '6f4c264a24d933ce70df5dedcf1dcaee' + 'ebe013ee18cced0ef93d5f746d80ef60'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art"
+	],
+	"file_history":
+	[
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/scss/all/all-news.scss",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/scss/all/news-slider.scss",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/scss/all/variables.scss",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/scss/all/btn.scss",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/scss/all/textarea.scss",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/app/home-page/home-page.component.ts",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/scss/all/fitback.scss",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/scss/all/top-slider.scss",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/scss/all/footer.scss",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/scss/styles.scss",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/scss/all/tiles.scss",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/scss/all/home.scss",
+		"/Users/romanarsenev/scool/index.html",
+		"/Users/romanarsenev/work/My-lanit/source/css/all/btn.less",
+		"/Users/romanarsenev/work/My-lanit/source/css/all/advert.less",
+		"/Users/romanarsenev/work/My-lanit/source/html/list-topics.html",
+		"/Users/romanarsenev/work/My-lanit/source/html/advs-my.html",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/app/app.component.ts",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/app/all-news/all-news.component.ts",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/scss/all/search-block.scss",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/app/home-page/home-page.component.html",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/index.html",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/scss/all/slik-slider.scss",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/assets/js/js.js",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/app/static-page/static-page.component.ts",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/app/one-news/one-news.component.ts",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/app/topmenu/topmenu.component.ts",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/app/app.module.ts",
+		"/Users/romanarsenev/Desktop/MaterialDesign-Webfont-master/css/materialdesignicons.css",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/scss/all/home-menu.scss",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/app/one-news.service.ts",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/scss/all/topmenu.scss",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/scss/all/input.scss",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/assets/img/logo.svg",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/scss/all/topslider.scss",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/app/app.component.html",
+		"/Users/romanarsenev/Desktop/MaterialDesign-Webfont-master/package.json",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/app/app.home.ts",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/scss/all/art.scss",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/scss/all/content.scss",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/app/static-page/static-page.component.html",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/app/static-page.service.ts",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/scss/all/one-news.scss",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/app/all-news/all-news.component.html",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/app/topmenu/topmenu.component.html",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/app/one-news/one-news.component.html",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/app/news.service.ts",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/scss/all/gallery.scss",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/app/art/art.component.html",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/app/art/art.component.ts",
+		"/Users/romanarsenev/work/4-art/4-cli/four/Angular-4art/src/app/art/art.service.ts",
+		"/Users/romanarsenev/work/kino/kino-ftp2/wp-content/themes/kino-theme/build/scripts/scripts.js",
+		"/Users/romanarsenev/work/kino/kino-ftp2/wp-content/themes/kino-theme/build/css/style.css",
+		"/Users/romanarsenev/work/Cebit/source/css/all/content.less",
+		"/Users/romanarsenev/work/Cebit/source/css/all/radio.less",
+		"/Users/romanarsenev/work/Cebit/source/css/all/input.less",
+		"/Users/romanarsenev/work/Cebit/source/css/all/btn.less",
+		"/Users/romanarsenev/work/Cebit/source/scripts/scripts.js",
+		"/Users/romanarsenev/work/Cebit/source/html/en.html",
+		"/Users/romanarsenev/work/Cebit/source/css/all/reset.less",
+		"/Users/romanarsenev/work/Cebit/source/css/all/left-block.less",
+		"/Users/romanarsenev/work/Cebit/source/html/index.html",
+		"/Users/romanarsenev/work/Cebit/source/css/all/right-block.less",
+		"/Users/romanarsenev/work/Cebit/source/css/all/fonts.less",
+		"/Users/romanarsenev/ssh-key/ssh-key.pub",
+		"/Users/romanarsenev/work/kino/kino-ftp2/wp-content/themes/kino-theme/category-news.php",
+		"/Users/romanarsenev/work/kino/kino-ftp2/wp-content/themes/kino-theme/build/css/time.css",
+		"/Users/romanarsenev/work/kino/kino-ftp2/index.php",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/app/all-news/all-news.component.html",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/app/news.service.ts",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/app/topmenu/topmenu.component.ts",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/app/all-news/all-news.component.ts",
+		"/Users/romanarsenev/work/Cebit/source/css/all/footer.less",
+		"/Users/romanarsenev/work/Cebit/source/html/file-include/footer.html",
+		"/Users/romanarsenev/work/Cebit/source/html/file-include/head.html",
+		"/Users/romanarsenev/work/Cebit/source/css/all/language.less",
+		"/Users/romanarsenev/work/Cebit/source/css/all/coll.less",
+		"/Users/romanarsenev/work/Cebit/source/css/style.less",
+		"/Users/romanarsenev/work/Cebit/source/css/all/variables.less",
+		"/Users/romanarsenev/work/Cebit/source/scripts/list.js",
+		"/Users/romanarsenev/work/luk/source/css/all/radio.less",
+		"/Users/romanarsenev/work/luk/source/html/index.html",
+		"/Users/romanarsenev/work/Cebit/source/css/all/header.less",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/scss/all/all-news.scss",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/scss/styles.scss",
+		"/Users/romanarsenev/work/4-art/4-cli/four/package.json",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/app/app.module.ts",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/scss/all/variables.scss",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/app/topmenu/topmenu.component.html",
+		"/Users/romanarsenev/work/4-art/4-cli/four/node_modules/rxjs/src/internal/util/UnsubscriptionError.ts",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/app/art/art.component.ts",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/scss/all/header.scss",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/scss/all/topmenu.scss",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/scss/all/reset.scss",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/scss/all/content.scss",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/index.html",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/scss/all/topslider.scss",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/app/app.component.html",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/scss/all/content.cscc",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/app/home-page/home-page.component.ts",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/app/home-page/home-page.component.html",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/app/static-page/static-page.component.ts",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/app/app.component.ts",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/app/variables.cscc",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/scss/all/.topslider {",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/app/slider.service.ts",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/app/topslider/topslider.component.ts",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/app/topslider/topslider.component.html",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/app/messages/messages.component.ts",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/app/slider-detail/slider-detail.component.ts",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/app/slider-detail/slider-detail.component.html",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/app/mock-sliders.ts",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/app/slide.ts",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/app/slider-detail/slider-detail.component.spec.ts",
+		"/Users/romanarsenev/.Trash/slider-detail/slider-detail.component.html",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/app/test-list/test-list.module.spec.ts",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/app/app.component.css",
+		"/Users/romanarsenev/work/4-art/4-cli/four/src/sass/styles.scss",
+		"/Users/romanarsenev/work/4-art/4-cli/four/angular.json",
+		"/Users/romanarsenev/work/met-4/ver-statics/gulp/tasks/copy.scss.js",
+		"/Users/romanarsenev/work/met-4/ver-statics/gulp/paths/tasks.js",
+		"/Users/romanarsenev/work/nd/less/css/md-new.css",
+		"/Users/romanarsenev/work/itracker_auth/itracker_auth/auth/src/templates/login.css",
+		"/Users/romanarsenev/work/itracker_auth/itracker_auth/auth/src/templates/index.html",
+		"/Users/romanarsenev/work/met-2/itracker/MEDIALOGIA/frontend/src/app/modules/incidents/workflow/views/workflow-view.posts.html",
+		"/Users/romanarsenev/work/met-2/itracker/MEDIALOGIA/frontend/src/app/core/theme/styles/_social.scss",
+		"/Users/romanarsenev/work/met-2/itracker/MEDIALOGIA/frontend/src/app/modules/settings/social/select-acc-groups.modal.html",
+		"/Users/romanarsenev/work/fish/source/scripts/scripts.js"
+	],
+	"find":
+	{
+		"height": 39.0
+	},
+	"find_in_files":
+	{
+		"height": 101.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 43.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.exec":
+	{
+		"height": 30.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"output.sftp":
+	{
+		"height": 108.0
+	},
+	"output.unsaved_changes":
+	{
+		"height": 30.0
+	},
+	"pinned_build_system": "",
+	"project": "4-angular.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 290.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+		"max_columns": 2
+	}
+}

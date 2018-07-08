@@ -12,6 +12,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { StaticPageComponent } from './static-page/static-page.component';
 import { ArtComponent } from './art/art.component';
 import { OneNewsComponent } from './one-news/one-news.component';
+import { AutorcartComponent } from './art/autorcart/autorcart.component';
 
 const routes = [
   {path: '', component: HomePageComponent}, 
@@ -29,7 +30,8 @@ const routes = [
     HomePageComponent,
     StaticPageComponent,
     ArtComponent,
-    OneNewsComponent
+    OneNewsComponent,
+    AutorcartComponent
   ],
   imports: [
     BrowserModule,

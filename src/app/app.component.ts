@@ -8,10 +8,15 @@ import { Router } from '@angular/router';
 })
 export class AppComponent {
 
-	// home = false;
+
+	public Getlink: number = 0;
 
 	public get IsHomepage(): boolean {
 	    return this.router.url == '/'; 
+	}
+	public get IsArt(): boolean {
+		this.Getlink = this.router.url.indexOf('art');
+		return this.Getlink >= 0;
 	}
 
 
