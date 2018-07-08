@@ -20,6 +20,10 @@
 		outline: none;
 		// transition: all 0.4s;
 		animation: vizible  .7s;
+		@extend .trans;
+		&:hover {
+			box-shadow:  0 0 7px 0px #d0c8c8;
+		}
 		&:nth-child(3n) {
 			margin-right: 0;
 		}

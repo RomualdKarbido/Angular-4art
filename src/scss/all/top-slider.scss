@@ -2,6 +2,14 @@
 	height: 100vh;
 	background: #2D2D2D; 
 	position: relative;
+	overflow: hidden;
+	.all-news__item {
+		&:hover {
+			// box-shadow: none;
+			box-shadow:  0 0 7px 0px black !important;
+
+		}
+	}
 	&__item {
 		background-size: cover !important;
 		background-position: center !important;

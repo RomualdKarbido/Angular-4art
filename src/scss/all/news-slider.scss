@@ -54,6 +54,12 @@
 	.all-news__item {
 		margin-bottom: 0;
 		cursor: default;
+		
+		&:hover {
+			// box-shadow: none;
+			box-shadow:  0 0 7px 0px black !important;
+		}
+
 	}
 	.all-news__item-link {
 		cursor: default;

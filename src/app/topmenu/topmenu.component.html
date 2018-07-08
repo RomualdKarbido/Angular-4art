@@ -17,7 +17,7 @@
 			<div class="topmenu__item" *ngFor="let menu of TopMenulist">
 				<a class="topmenu__item-link" 
 				routerLink="{{ menu.link }}" 
-				[ngClass]="{'active' : isActiveMenuItem(menu) }">
+				[ngClass]="{'active' : isActiveMenuItem(menu) }"> 
 				{{ menu.name }} 
 			</a>
 
@@ -55,7 +55,17 @@
 
 
 <div class="topmenu__right">
-	123
+	<div class="topmenu__soc-list">
+		<div class="topmenu__soc-item"> 
+			<i class="mdi mdi-vk"></i>
+		</div>
+		<div class="topmenu__soc-item">
+			<i class="mdi mdi-facebook"></i>
+		</div>
+		<div class="topmenu__soc-item">
+			<i class="mdi mdi-twitter"></i>
+		</div>
+	</div>
 </div>
 </div>
 

@@ -99,6 +99,7 @@ export class HomePageComponent implements OnInit {
 			 	  slidesToShow: 4,
 			 	  slidesToScroll: 4,
 			 	  edgeFriction: false,
+			 	  arrows: false,
 			 	  responsive: [
 			 	    {
 			 	      breakpoint: 1500,

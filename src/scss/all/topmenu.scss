@@ -131,6 +131,31 @@
 			margin-bottom: $sp;
 		}
 	}
+	&__right {
+
+	}
+	&__soc {
+		border-left: 1px solid $b-gold;
+		padding-left: $sp*2;
+		padding-right: $sp*2;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		&-list {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		&-item {
+			margin: 0 $sp/2;
+			font-size: 20px;
+			cursor: pointer;
+			@extend .trans;
+			&:hover {
+				color: $gold;
+			}
+		}
+	}
 }
 
 

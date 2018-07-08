@@ -1,9 +1,10 @@
 .home {
   width: 100%;
   margin: 0;
+
   h3 {
     font-size: 36px;
- }
+  }
   &__wrap {
     position: relative;
   }
@@ -11,6 +12,7 @@
     max-width: 100%;
     margin-top: 0;
     padding-top: 0;
+    background: #e8e6de; 
   }
   .topmenu__left_art {
     display: none;

@@ -4,4 +4,108 @@
 	height: $footer-h;
 	background: #3B3A3A;
 	position: relative;
+	padding: 45px 0 0;
+	box-sizing: border-box;
+	box-shadow: inset 2px 3px 0px 0px #2d2d2d;
+	&__content {
+		display: flex;
+		color: white;
+		a {
+			color: $gold;
+			text-decoration: none;
+		}
+	}
+	&__logo, &__soc {
+		flex: 1;
+		height: 120px;
+	}
+	&__center {
+		flex: 2;
+		padding: 0 $sp*3;
+		display: flex;
+		-ms-align-items: center;
+		align-items: center;
+		&-text {
+			
+			span {
+				// margin-bottom: ;
+				display: block;
+				line-height: 1.4;
+			}
+		}
+		&-bold {
+			font-weight: 700;
+			font-size: 18px;
+			margin-bottom: $sp;
+		}
+	}
+	&__logo {
+		border-right: 1px solid $b-gold;
+		padding-right: $sp*2;
+		padding-left:  $sp*2;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		&-link {
+			background: url(../assets/img/logo-4.svg) no-repeat;
+			margin-right: $sp*2;
+			margin-left: $sp*2;
+			width: 211px;
+			height: 95px;
+			background-size: contain;
+			background-position: right top;
+			outline: none;
+			cursor: pointer;
+		}
+	}
+	&__soc {
+		border-left: 1px solid $b-gold;
+		padding-left: $sp*2;
+		padding-right: $sp*2;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		&-list {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+		&-item {
+			margin: 0 $sp;
+			font-size: 24px;
+			cursor: pointer;
+			@extend .trans;
+			&:hover {
+				color: $gold;
+			}
+		}
+	}
+	&__bot {
+		border-top: 1px solid $b-gold;
+		margin-top: 50px;
+		height: 80px;
+		box-sizing: border-box;
+		align-items: center;
+		justify-content: center;
+		display: -webkit-flex;
+		display: -moz-flex;
+		display: -ms-flex;
+		display: -o-flex;
+		display: flex;
+		
+
+		&-link {
+			color:#7A7A7A;
+			font-size: 11px;
+			display: inline-block;
+			text-decoration: none;
+			outline: none;
+			@extened .trsns;
+			&:hover {
+				color: $gold;
+			}
+		}
+
+	}
 }
