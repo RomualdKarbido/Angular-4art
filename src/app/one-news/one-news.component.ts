@@ -9,22 +9,19 @@ import { Router } from '@angular/router';
   templateUrl: './one-news.component.html',
   providers:[OneNewsService],
 })
-export class OneNewsComponent implements OnInit {
+export class OneNewsComponent implements OnInit { 
 
   OneNews  = [];
   NewsLeft  = [];
   public IsVisiblePreloader: boolean = true; //прелоадер
 
-  IdBtn(event) { 
+  IdBtn() { 
     this.IsVisiblePreloader = true;
-   
-    // event = true;
-    // return event == this.router.url;
   }
 
 
   constructor(private OneNewsService: OneNewsService, private route: ActivatedRoute, private router:Router) {
-  // constructor() {
+  
 
     this.route.params.subscribe(params => {
        var newsId = +params['id']; // (+) converts string 'id' to a number

@@ -12,25 +12,33 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 require("rxjs-compat/add/operator/map");
-var StaticPageService = /** @class */ (function () {
-    function StaticPageService(http) {
+var ArtsService = /** @class */ (function () {
+    function ArtsService(http) {
         this.http = http;
     }
-    StaticPageService.prototype.GetPage = function (pageId) {
-        return this.http.get('http://www.nd-ms.ru/wp-json/wp/v2/pages/' + pageId)
+    ArtsService.prototype.GetArtPage = function (IdCat) {
+        return this.http.get('http://4arts.conglo.ru/wp-json/wp/v2/pages/?categories=' + IdCat)
             .map(function (response) { return response.json(); });
     };
-    StaticPageService.prototype.GetNews = function () {
-        return this.http.get('http://www.nd-ms.ru/wp-json/wp/v2/posts?per_page=5')
+    ArtsService.prototype.GetArtPageShow = function (IdPage) {
+        return this.http.get('http://4arts.conglo.ru/wp-json/wp/v2/pages/' + IdPage)
             .map(function (response) { return response.json(); });
     };
-    StaticPageService = __decorate([
+    ArtsService.prototype.GetArtGallery = function (IdGallRouter) {
+        return this.http.get('http://4arts.conglo.ru/wp-json/wp/v2/pages/?categories=' + IdGallRouter)
+            .map(function (response) { return response.json(); });
+    };
+    ArtsService.prototype.GetArtCategory = function () {
+        return this.http.get('http://4arts.conglo.ru/wp-json/wp/v2/categories')
+            .map(function (response) { return response.json(); });
+    };
+    ArtsService = __decorate([
         core_1.Injectable({
             providedIn: 'root'
         }),
         __metadata("design:paramtypes", [http_1.Http])
-    ], StaticPageService);
-    return StaticPageService;
+    ], ArtsService);
+    return ArtsService;
 }());
-exports.StaticPageService = StaticPageService;
-//# sourceMappingURL=static-page.service.js.map
+exports.ArtsService = ArtsService;
+//# sourceMappingURL=arts.service.js.map

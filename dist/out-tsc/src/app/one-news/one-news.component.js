@@ -16,7 +16,6 @@ var router_1 = require("@angular/router");
 var router_2 = require("@angular/router");
 var OneNewsComponent = /** @class */ (function () {
     function OneNewsComponent(OneNewsService, route, router) {
-        // constructor() {
         var _this = this;
         this.OneNewsService = OneNewsService;
         this.route = route;
@@ -30,22 +29,25 @@ var OneNewsComponent = /** @class */ (function () {
             obs1.subscribe(function (i) {
                 _this.OneNews = i;
                 console.log(_this.OneNews);
-                // условия для прелоадера
-                rxjs_compat_1.Observable.forkJoin([obs1]).subscribe(function () {
-                    _this.IsVisiblePreloader = false;
-                });
-                // In a real app: dispatch action to load the details here.
             });
-        }, isActiveMenuItem(menu, any), {
-            return: '/all_news/news/' + menu.id == this.router.url,
-            console: .log(menu.id + 'sdfsf')
-        }, ngOnInit(), {});
+            // условия для прелоадера
+            rxjs_compat_1.Observable.forkJoin([obs1]).subscribe(function () {
+                _this.IsVisiblePreloader = false;
+            });
+        });
+        var obs2 = this.OneNewsService.GetNews();
+        obs2.subscribe(function (d) {
+            _this.NewsLeft = d;
+            console.log(_this.NewsLeft);
+        });
     }
-    OneNewsComponent.prototype.IdBtn = function (event) {
-        console.log('IdBtn - ', event);
+    OneNewsComponent.prototype.IdBtn = function () {
         this.IsVisiblePreloader = true;
-        // event = true;
-        // return event == this.router.url;
+    };
+    OneNewsComponent.prototype.isActiveMenuItem = function (menu) {
+        return '/all_news/news/' + menu.id == this.router.url;
+    };
+    OneNewsComponent.prototype.ngOnInit = function () {
     };
     OneNewsComponent = __decorate([
         core_1.Component({

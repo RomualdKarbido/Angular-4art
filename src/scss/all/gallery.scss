@@ -24,4 +24,15 @@
 			
 		}
 	}
+	&-box {
+		display: flex;
+		margin-bottom: 20px;
+		&__item {
+			width: 50%;
+			background: red;
+			border: 3px solid;
+			padding: 20px;
+		}
+	}
+
 }

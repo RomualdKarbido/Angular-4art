@@ -10,9 +10,12 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
+// import { ActivatedRoute } from '@angular/router';
 var router_1 = require("@angular/router");
 var TopmenuComponent = /** @class */ (function () {
     function TopmenuComponent(router) {
+        // console.log(this.router.config + ' - роутер');
+        // console.log(this.router.paramsInheritanceStrategy + ' - роутер');
         this.router = router;
         this.TopMenulist = [
             { name: ' ', link: '/' },
@@ -20,19 +23,26 @@ var TopmenuComponent = /** @class */ (function () {
             { name: 'Новости', link: '/all_news' }
         ];
         this.TopMenuArts = [
-            { name: 'Евгений Расторгуев', link: '/art/er' },
-            { name: 'Тамара Гусева', link: '/art/tg' },
+            { name: 'Евгений Расторгуев', cat: '6', link: '/art/6/19' },
+            { name: 'Тамара Гусева', cat: '8', link: '/art/8/30' },
             { name: 'Людмила Варламова', link: '/art/lv' },
             { name: 'Наталья Варламова', link: '/art/nv' }
         ];
     }
+    // this.route.params.subscribe(params => {
+    // 	var linkCat = +params['link'];
+    // 	console.log(this.linkCat);
+    // });
+    // isActiveMenuItem(menu: any) {
+    //
+    // 	return this.router.url.indexOf(menu.link) != -1 &&  menu.link != '/';
+    // }
+    // isActiveArtItem(art: any) {
+    //
+    // 	return art.link == this.router.url;
+    //
+    // }
     TopmenuComponent.prototype.ngOnInit = function () {
-    };
-    TopmenuComponent.prototype.isActiveMenuItem = function (menu) {
-        return this.router.url.indexOf(menu.link) != -1 && menu.link != '/';
-    };
-    TopmenuComponent.prototype.isActiveArtItem = function (art) {
-        return art.link == this.router.url;
     };
     TopmenuComponent = __decorate([
         core_1.Component({

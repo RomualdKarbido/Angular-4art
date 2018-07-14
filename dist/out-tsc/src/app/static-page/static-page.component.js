@@ -25,31 +25,29 @@ var StaticPageComponent = /** @class */ (function () {
         this.NewsLeft = [];
         this.IsVisiblePreloader = true; //прелоадер
         this.route.params.subscribe(function (params) {
-            // var pageId = +params['id']; // (+) converts string 'id' to a number
-            var pageId = 3370;
+            // var pageId = params['id']; // (+) converts string 'id' to a number
+            var pageId = 15;
             var obs1 = _this.StaticPageService.GetPage(pageId);
             obs1.subscribe(function (i) {
                 _this.Page = i;
                 console.log(_this.Page);
+            });
+            // условия для прелоадера
+            rxjs_compat_1.Observable.forkJoin([obs1]).subscribe(function () {
+                _this.IsVisiblePreloader = false;
             });
             var obs2 = _this.StaticPageService.GetNews();
             obs2.subscribe(function (d) {
                 _this.NewsLeft = d;
                 console.log(_this.NewsLeft);
             });
-            // условия для прелоадера
-            rxjs_compat_1.Observable.forkJoin([obs1, obs2]).subscribe(function () {
-                _this.IsVisiblePreloader = false;
-            });
         });
     }
     StaticPageComponent.prototype.IdBtn = function (event) {
-        console.log('IdBtn - ', event);
         this.IsVisiblePreloader = true;
     };
     StaticPageComponent.prototype.isActiveMenuItem = function (menu) {
         return '/all_news/news/' + menu.id == this.router.url;
-        console.log(menu.id + 'sdfsf');
     };
     StaticPageComponent.prototype.ngOnInit = function () {
     };
@@ -57,7 +55,7 @@ var StaticPageComponent = /** @class */ (function () {
         core_1.Component({
             selector: 'app-static-page',
             templateUrl: './static-page.component.html',
-            providers: [static_page_service_1.StaticPageService],
+            providers: [static_page_service_1.StaticPageService]
         }),
         __metadata("design:paramtypes", [static_page_service_1.StaticPageService, router_1.ActivatedRoute, router_2.Router])
     ], StaticPageComponent);

@@ -1,7 +1,7 @@
 <div class="topmenu">
 	<div class="topmenu__left-wrap">
 		<div class="topmenu__left topmenu__left_language">
-			<div class="topmenu__item "> 
+			<div class="topmenu__item ">
 				<a href="/" class="topmenu__item-link active">
 					ru
 				</a>
@@ -15,10 +15,10 @@
 
 		<div class="topmenu__left topmenu__left_home">
 			<div class="topmenu__item" *ngFor="let menu of TopMenulist">
-				<a class="topmenu__item-link" 
-				routerLink="{{ menu.link }}" 
-				[ngClass]="{'active' : isActiveMenuItem(menu) }"> 
-				{{ menu.name }} 
+				<a class="topmenu__item-link"
+				routerLink="{{ menu.link }}"
+				routerLinkActive="active">
+				{{ menu.name }}
 			</a>
 
 
@@ -32,15 +32,15 @@
 		<div class="topmenu__item" *ngFor="let art of TopMenuArts">
 			<div class="topmenu__item-wrap">
 				<a 	class="topmenu__item-link"
-				routerLink="{{ art.link }}" 
-				[ngClass]="{'active' : isActiveArtItem(art) }"> 
+				routerLink="{{ art.link }}"
+				routerLinkActive="active">
 				{{ art.name }}
 			</a>
 
 			<div class="topmenu__submenu" >
 				<div class="topmenu__submenu-item" *ngFor="let artSub of TopMenuArts">
 					<a 	class="topmenu__submenu-link"
-					routerLink="{{ artSub.link }}" > 
+					routerLink="{{ artSub.link }}" >
 					{{ artSub.name }}
 				</a>
 			</div>
@@ -56,7 +56,7 @@
 
 <div class="topmenu__right">
 	<div class="topmenu__soc-list">
-		<div class="topmenu__soc-item"> 
+		<div class="topmenu__soc-item">
 			<i class="mdi mdi-vk"></i>
 		</div>
 		<div class="topmenu__soc-item">
@@ -68,5 +68,3 @@
 	</div>
 </div>
 </div>
-
-

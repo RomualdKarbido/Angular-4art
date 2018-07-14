@@ -12,7 +12,7 @@
         <div class="one-news__last-item"
 					routerLink="{{ '/all_news/news/' + newsItem.id }}"
 					(click) = "IdBtn(newsItem.id)"
-          [ngClass]="{'active' : isActiveMenuItem(newsItem) }"
+          routerLinkActive="active"
 					>
           <div class="one-news__last-date" >{{ newsItem.date | date:'MM.dd.yyyy' }}</div>
           <div class="one-news__last-name" [innerHTML]='newsItem.title.rendered'></div>
