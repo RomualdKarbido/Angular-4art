@@ -1,10 +1,11 @@
 import { Injectable } from '@angular/core';
 import { Http } from '@angular/http';
-import 'rxjs-compat/add/operator/map'
+import 'rxjs-compat/add/operator/map';
 import {Observable} from 'rxjs';
 
 @Injectable({
 	providedIn: 'root'
+
 })
 export class ArtsService {
 
@@ -12,7 +13,7 @@ export class ArtsService {
 
 
 
-	
+
 	GetArtPage(IdCat){
 		return this.http.get('http://4arts.conglo.ru/wp-json/wp/v2/pages/?categories=' + IdCat)
 		.map(response => response.json());
@@ -31,4 +32,11 @@ export class ArtsService {
 		return this.http.get('http://4arts.conglo.ru/wp-json/wp/v2/categories')
 		.map(response => response.json());
 	}
+	//запрос на фото
+	GetArtGalleryImg(num){
+		return this.http.get('http://4arts.conglo.ru/wp-json/wp/v2/media/' + num)
+		.map(response => response.json());
+	}
+
+	//выводим автора категории
 }

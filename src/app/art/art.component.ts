@@ -14,12 +14,17 @@ export class ArtComponent implements OnInit {
 
   Gall  = [];
   ArtPage  = [];
-  ArtPagenew = [];
   ArtPageLeft  = [];
   OnePage = [];
-  Gallery = [];
 
-  IdChild = 0;
+
+  GalleryLink = {
+    cat: '',
+    gall: 'all',
+  };
+
+
+
 
   IdPage() {
     // IdPageCat = this.OnePage.categories;
@@ -36,10 +41,13 @@ export class ArtComponent implements OnInit {
     //получаем все статические стр художника
     this.route.params.subscribe(params => {
       var IdCat = +params['cat']; // (+) converts string 'id' to a number
+      this.GalleryLink.cat = +params['cat']; //ссылка на галерею
+
       var obs1 = this.ArtsService.GetArtPage(IdCat);
 
       obs1.subscribe( p => {
         this.ArtPage = p;
+        console.log(this.ArtPage);
 
       });
     });
@@ -53,36 +61,6 @@ export class ArtComponent implements OnInit {
         this.OnePage = d;
       });
     });
-
-
-
-    //Ищем потомков текущей категории
-
-    this.route.params.subscribe(params => {
-     var IdCat = +params['cat']; // (+) converts string 'id' to a number
-     console.log(IdCat);
-
-     var obs4 = this.ArtsService.GetArtCategory();
-     obs4.subscribe( g => {
-       this.ArtPagenew = g;
-       console.log(g);
-
-       for (var i = 0; i < this.ArtPagenew.length; i++) {
-         if (this.ArtPagenew[i].parent == IdCat) {
-           console.log('Найдено - ' + this.ArtPagenew[i].id);
-           this.IdChild = this.ArtPagenew[i].id;
-
-           //получаем все стр галереи худоника
-           var IdGallRouter = this.IdChild;
-           var obs3 = this.ArtsService.GetArtGallery(IdGallRouter);
-
-           obs3.subscribe( f => {
-             this.Gallery = f;
-           });
-         }
-       }
-     });
-   });
 
 
   }

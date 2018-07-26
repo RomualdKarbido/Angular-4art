@@ -10,14 +10,14 @@ import { Http } from '@angular/http';
 
 
 
-@Component({ 
+@Component({
 	selector: 'app-all-news',
 	templateUrl: './all-news.component.html',
 	providers:[NewsService]
 })
 
 
-export class AllNewsComponent implements OnInit { 
+export class AllNewsComponent implements OnInit {
 
 	News  = [];
 	News2  = [];
@@ -32,11 +32,11 @@ export class AllNewsComponent implements OnInit {
 
 	public IsVisiblePreloader: boolean = true;
 	public newPage: number = 1;
-	public More(click) { 
+	public More(click) {
 		this.IsVisiblePreloader = true;
 		this.newPage = this.newPage + 1;
-		
-		var obs1 = this.newsService.GetNews(this.newPage); 
+
+		var obs1 = this.newsService.GetNews(this.newPage);
 
 		obs1.subscribe( i => {
 			this.News2 = i;
@@ -45,14 +45,14 @@ export class AllNewsComponent implements OnInit {
 			}
 			for(var r=0; r<this.News.length; r++) {
 				this.linkImg[r] = 'http://www.nd-ms.ru/wp-json/wp/v2/media/' + this.News[r].featured_media;
-				
+
 
 				var obs5 = this.http.get(this.linkImg[r]).map(response => response.json());
 				obs5.subscribe( xx => {
 					var foundedNews = this.getNewsByFeaturedMediaId(xx.id);
 					if(foundedNews)
 						foundedNews.headimg = xx.source_url;
-				}); 
+				});
 			}
 		});
 		Observable.forkJoin([obs1]).subscribe(() => {
@@ -61,8 +61,8 @@ export class AllNewsComponent implements OnInit {
 	}
 
 	constructor(private newsService: NewsService, private http: Http) {
-		
-		var obs1 = this.newsService.GetNews(this.newPage); 
+
+		var obs1 = this.newsService.GetNews(this.newPage);
 		obs1.subscribe( i => {
 			this.News = i;
 			console.log(this.News);
@@ -70,13 +70,13 @@ export class AllNewsComponent implements OnInit {
 			for(var r=0; r<this.News.length; r++) {
 				this.linkImg[r] = 'http://www.nd-ms.ru/wp-json/wp/v2/media/' + this.News[r].featured_media;
 				console.log('запрос на img - ' + ' -' + this.linkImg[r]);
-				
+
 				var obs5 = this.http.get(this.linkImg[r]).map(response => response.json());
 				obs5.subscribe( xx => {
 					var foundedNews = this.getNewsByFeaturedMediaId(xx.id);
 					if(foundedNews)
 						foundedNews.headimg = xx.source_url;
-				}); 
+				});
 			}
 		});
 
@@ -90,7 +90,7 @@ export class AllNewsComponent implements OnInit {
 		})
 	}
 
-	
+
 
 
 	private getNewsByFeaturedMediaId(mediaId: any) : any {

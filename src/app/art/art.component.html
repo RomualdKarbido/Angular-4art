@@ -7,25 +7,28 @@
 				<div class="one-news__leftmenu-fix" >
 					<div class="one-news__last">
 
-						<div  class="one-news__last-item" routerLink="/art/6/10">
 
-							<div  class="one-news__last-name">
-								<i class="mdi mdi-image-filter"></i>Галерея
+							<div  class="one-news__last-item"
+										(click) = "IdPage()"
+										routerLink="{{ '/art/' + GalleryLink.cat + '/gallery/' + GalleryLink.gall }}">
+
+
+										<div  class="one-news__last-name">
+											<i class="mdi mdi-image-filter"></i>Галерея
+										</div>
 							</div>
-						</div>
 
 						<div *ngFor='let artItem of ArtPage'>
 							<div class="one-news__last-item"
-							(click) = "IdPage()"
-							routerLink="{{ '/art/' + artItem.categories[0] + '/' + artItem.id }}"
-							routerLinkActive="active"
-							>
-							<div  class="one-news__last-name" >
-								{{ artItem.title.rendered }}
+								(click) = "IdPage()"
+								routerLink="{{ '/art/' + artItem.categories[0] + '/' + artItem.id }}"
+								routerLinkActive="active"	>
+								<div  class="one-news__last-name" >
+									{{ artItem.title.rendered }}
 
+								</div>
 							</div>
 						</div>
-					</div>
 
 
 				</div>
@@ -38,21 +41,7 @@
 				<h1 [innerHTML] = "OnePage.title.rendered"></h1>
 			</div>
 			<div class="one-news__content">
-				<div class="gallery-box">
-					<div class="gallery-box__item" *ngFor='let ItemGall of Gallery'>
-						<h1 [innerHTML] = "ItemGall.title.rendered"></h1>
-						<div [innerHTML] = "ItemGall.content.rendered"></div>
-
-						id = {{ ItemGall.id }} <br>
-						Category = {{ ItemGall.categories }} <br>
-
-					</div>
-				</div>
-
 				<div [innerHTML] = "OnePage.content.rendered"></div>
-
-
-
 			</div>
 		</div>
 	</div>

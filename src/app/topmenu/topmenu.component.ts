@@ -28,28 +28,10 @@ export class TopmenuComponent implements OnInit {
 
   constructor( private router:Router) {
 
-		// console.log(this.router.config + ' - роутер');
-		// console.log(this.router.paramsInheritanceStrategy + ' - роутер');
+
 
 	}
 
-	// this.route.params.subscribe(params => {
-	// 	var linkCat = +params['link'];
-	// 	console.log(this.linkCat);
-	// });
-
-
-
-
-	// isActiveMenuItem(menu: any) {
-	//
-	// 	return this.router.url.indexOf(menu.link) != -1 &&  menu.link != '/';
-	// }
-	// isActiveArtItem(art: any) {
-	//
-	// 	return art.link == this.router.url;
-	//
-	// }
 	ngOnInit() {
 	}
 }

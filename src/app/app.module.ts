@@ -2,6 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpModule } from '@angular/http';
 import { RouterModule } from '@angular/router';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -20,8 +21,8 @@ const routes = [
   {path: 'all_news', component: AllNewsComponent},
   {path: 'page/:sublink', component: StaticPageComponent},
   {path: 'art/:cat/:id', component: ArtComponent},
-  {path: 'art/:cat/:gal', component: GalleryComponent},
   {path: 'all_news/news/:id', component: OneNewsComponent},
+  {path: 'art/:cat/gallery/:gall', component: GalleryComponent}
 ]
 
 @NgModule({
@@ -39,7 +40,8 @@ const routes = [
   imports: [
     BrowserModule,
     HttpModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    HttpClientModule // Импортируем модуль
 
   ],
   providers: [],
