@@ -19,7 +19,7 @@ export class StaticPageComponent implements OnInit {
 	public IsVisiblePreloader: boolean = true; //прелоадер
 
 	IdBtn(event) {
-		this.IsVisiblePreloader = true; 
+		this.IsVisiblePreloader = true;
 	}
 
 
@@ -33,7 +33,6 @@ export class StaticPageComponent implements OnInit {
 			var obs1 = this.StaticPageService.GetPage(pageId);
 			obs1.subscribe( i => {
 				this.Page = i;
-				console.log(this.Page);
 			});
 
 			// условия для прелоадера

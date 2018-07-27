@@ -2,7 +2,7 @@
 	<div class="home__info">
 		<div class="home__info-wrap">
 			<div class="home__info-logo"></div>
-			<div class="home__info-text"> 
+			<div class="home__info-text">
 				Сайт посвященный 4м художникам, <br>
 				жившим в разную эпоху. Но составляющих одно целое
 			</div>
@@ -10,13 +10,13 @@
 		</div>
 	</div>
 	<div class="top-slider">
-		<div class="top-slider__item" style="background: url(../../assets/slider/bg-sl1.jpg) no-repeat;"> 
+		<div class="top-slider__item" style="background: url(../../assets/slider/bg-sl1.jpg) no-repeat;">
 			<div class="top-slider__text">«Троица» из серии «Часовня духа» 2005г.</div>
 		</div>
-		<div class="top-slider__item" style="background: url(../../assets/slider/bg-2.jpg) no-repeat;"> 
+		<div class="top-slider__item" style="background: url(../../assets/slider/bg-2.jpg) no-repeat;">
 			<div class="top-slider__text">«Арлекин с раковинами» из серии «Часовня духа» 2005г.</div>
 		</div>
-		<div class="top-slider__item" style="background: url(../../assets/slider/bg-3.jpg) no-repeat;"> 
+		<div class="top-slider__item" style="background: url(../../assets/slider/bg-3.jpg) no-repeat;">
 			<div class="top-slider__text">«Лежащая и раковины» из серии «Часовня духа» 2005г.</div>
 		</div>
 	</div>
@@ -24,8 +24,8 @@
 	<!-- меню художников -->
 	<div class="home-menu">
 		<div class="home-menu__item" *ngFor="let menu of MenuArts">
-			<div class="home-menu__link" routerLink="{{ menu.link }}">
-				{{ menu.name }} 
+			<div class="home-menu__link" routerLink="art/{{menu.object_id}}/{{menu.children[0].object_id  }}">
+				{{ menu.title }}
 			</div>
 		</div>
 	</div>
@@ -40,10 +40,10 @@
 
 	<!-- плитки -->
 	<div class="tiles" >
-		<div class="tiles__item" routerLink="{{ menu.link }}" *ngFor="let menu of MenuArts"> 
+		<div class="tiles__item" routerLink="{{ menu.link }}" *ngFor="let menu of MenuArts">
 			<div class="tiles__wrap">
-				<div class="tiles__name">{{ menu.name }}</div>
-				
+				<div class="tiles__name">{{ menu.title }}</div>
+
 				<div class="tiles__merit">Заслуженный деятель искусств России,живописец, <br> график-иллюстратор, скульптор.</div>
 
 
@@ -63,7 +63,7 @@
 					<div class="all-news__item-img"
 						 [ngStyle]="{'background-image': 'url(' + newsItem.headimg  + ')'}"
 						  routerLink="{{ '/all_news/news/' + newsItem.id }}"
-						  (click)="scrollToTop()" 
+						  (click)="scrollToTop()"
 						 ></div>
 					<div class="all-news__item-wrap" >
 						<div class="all-news__item-title" [innerHTML]="newsItem.title.rendered"></div>

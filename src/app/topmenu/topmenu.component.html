@@ -15,11 +15,11 @@
 
 		<div class="topmenu__left topmenu__left_home">
 			<div class="topmenu__item" *ngFor="let menu of TopMenulist">
-				<a class="topmenu__item-link"
-				routerLink="{{ menu.link }}"
-				routerLinkActive="active">
-				{{ menu.name }}
-			</a>
+				<a  class="topmenu__item-link"
+            routerLink="{{ menu.link }}"
+            routerLinkActive="active">
+            {{ menu.name }}
+			  </a>
 
 
 		</div>
@@ -28,29 +28,33 @@
 
 	<div class="topmenu__left topmenu__left_art">
 
-
-		<div class="topmenu__item" *ngFor="let art of TopMenuArts">
+		<div class="topmenu__item" *ngFor="let art of TopMenuArtsNew">
 			<div class="topmenu__item-wrap">
-				<a 	class="topmenu__item-link"
-				routerLink="{{ art.link }}"
-				routerLinkActive="active">
-				{{ art.name }}
-			</a>
-
-			<div class="topmenu__submenu" >
-				<div class="topmenu__submenu-item" *ngFor="let artSub of TopMenuArts">
-					<a 	class="topmenu__submenu-link"
-					routerLink="{{ artSub.link }}" >
-					{{ artSub.name }}
-				</a>
+						<a 	class="topmenu__item-link"
+						routerLink="/art/{{ art.object_id }}/{{ art.children[0].object_id }}"
+						routerLinkActive="active">
+							{{ art.title }}
+						</a>
+						<div class="topmenu__submenu" >
+							<div class="topmenu__submenu-item" *ngFor="let artSub of art.children">
+								<a 	class="topmenu__submenu-link"
+										*ngIf="artSub.object == 'page'"
+										routerLink="/art/{{ art.object_id }}/{{ artSub.object_id }}"
+										routerLinkActive="active">
+										{{ artSub.title }}
+								</a>
+								<a 	class="topmenu__submenu-link"
+										*ngIf="artSub.object == 'category'"
+										routerLink="/art/{{ art.object_id }}/gallery/all"
+										routerLinkActive="active">
+										{{ artSub.title }}
+								</a>
+						</div>
+				</div>
 			</div>
 		</div>
+
 	</div>
-</div>
-
-
-
-</div>
 </div>
 
 

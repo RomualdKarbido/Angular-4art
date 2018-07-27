@@ -1,49 +1,49 @@
 <div class="art">
-	<app-autorcart></app-autorcart>
-	<div class="art__content">
-		<div class="one-news">
-			<!-- левое менгю -->
-			<div class="one-news__leftmenu one-news__leftmenu_art">
-				<div class="one-news__leftmenu-fix" >
-					<div class="one-news__last">
+  <app-autorcart></app-autorcart>
+  <div class="art__content">
+    <div class="one-news">
+      <!-- левое менгю -->
+      <div class="one-news__leftmenu one-news__leftmenu_art">
+        <div class="one-news__leftmenu-fix">
+          <div class="one-news__last">
 
 
-							<div  class="one-news__last-item"
-										(click) = "IdPage()"
-										routerLink="{{ '/art/' + GalleryLink.cat + '/gallery/' + GalleryLink.gall }}">
+            <div *ngFor='let artItem of LeftSubArtsNew'>
+              <div class="one-news__last-item"
+                   *ngIf="artItem.object == 'page'"
+                   routerLink="/art/{{ IdCat }}/{{ artItem.object_id }}"
+                   routerLinkActive="active">
+                <div class="one-news__last-name">
+                  {{artItem.title}}
+                </div>
+              </div>
+            </div>
+
+            <div *ngFor='let artItem of LeftSubArtsNew'>
+              <div class="one-news__last-item"
+                   *ngIf="artItem.object == 'category'"
+                   routerLink="/art/{{ IdCat }}/gallery/all"
+                   routerLinkActive="active">
+                <div class="one-news__last-name">
+                  {{artItem.title}}
+                </div>
+              </div>
+            </div>
 
 
-										<div  class="one-news__last-name">
-											<i class="mdi mdi-image-filter"></i>Галерея
-										</div>
-							</div>
-
-						<div *ngFor='let artItem of ArtPage'>
-							<div class="one-news__last-item"
-								(click) = "IdPage()"
-								routerLink="{{ '/art/' + artItem.categories[0] + '/' + artItem.id }}"
-								routerLinkActive="active"	>
-								<div  class="one-news__last-name" >
-									{{ artItem.title.rendered }}
-
-								</div>
-							</div>
-						</div>
+          </div>
+        </div>
+      </div>
 
 
-				</div>
-			</div>
-		</div>
-
-
-		<div class="one-news__contentblock">
-			<div class="one-news__header" >
-				<h1 [innerHTML] = "OnePage.title.rendered"></h1>
-			</div>
-			<div class="one-news__content">
-				<div [innerHTML] = "OnePage.content.rendered"></div>
-			</div>
-		</div>
-	</div>
-</div>
+      <div class="one-news__contentblock">
+        <div class="one-news__header">
+          <h1 [innerHTML]="OnePage.title.rendered"></h1>
+        </div>
+        <div class="one-news__content">
+          <div [innerHTML]="OnePage.content.rendered"></div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>

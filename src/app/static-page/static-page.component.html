@@ -6,16 +6,15 @@
   <div class="one-news__leftmenu">
     <div class="one-news__leftmenu-fix">
     <h3 class="one-news__leftmenu-title">Последине новости</h3>
-      <div class="one-news__last"
-				*ngFor='let newsItem of NewsLeft'>
 
+
+			<div class="one-news__last"	*ngFor='let newsItem of NewsLeft'>
         <div class="one-news__last-item"
 					routerLink="{{ '/all_news/news/' + newsItem.id }}"
 					(click) = "IdBtn(newsItem.id)"
-          [ngClass]="{'active' : isActiveMenuItem(newsItem) }"
-					>
+          [ngClass]="{'active' : isActiveMenuItem(newsItem) }" >
           <div class="one-news__last-date" >{{ newsItem.date | date:'MM.dd.yyyy' }}</div>
-          <div class="one-news__last-name" [innerHTML]='newsItem.title.rendered'></div>
+          <div class="one-news__last-name" [innerHTML]="newsItem.title.rendered"></div>
         </div>
 
       </div>
@@ -24,7 +23,7 @@
   <div class="one-news__contentblock">
     <div class="one-news__header">
       <h1 [innerHTML]='Page.title.rendered'> </h1>
-      
+
     </div>
     <div class="one-news__content" [innerHTML]="Page.content.rendered"></div>
   </div>

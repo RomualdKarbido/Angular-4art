@@ -1,17 +1,18 @@
 <div class="art__header">
 	<div class="art__cart">
 		<div class="art__cart-imgbox">
-			<div class="art__cart-img" style="background: url(../assets/img/art/rt.jpg);"></div>
+			<!-- <div class="art__cart-img" style="background: url(../assets/img/art/rt.jpg);"></div> -->
+			<div class="art__cart-img" [ngStyle]="{'background-image': 'url(' + mediaImg  + ')'}"></div>
 		</div>
 		<div class="art__cart-info">
-			<h3>Евгений Расторгуев</h3>
-			<div class="art__cart-strong">
-				Заслуженный деятель искусств России, живописец, график-иллюстратор, скульптор.
-			</div>
+			<h3>{{ Catmass.name }}</h3>
+			<!-- <div class="art__cart-strong">
+				{{ Catmass.description}}
+			</div> -->
 			<div class="art__cart-text">
-				Евгений Расторгуев знаменит в основном своим практически бесконечным циклом "Городецкие фантазии".
-				Живопись и графика мастера находятся в Государственном Русском музее, Государственной Третьяковской галерее, а также в многочисленных частных собраниях, как в России, так и за рубежом.
+				{{ Catmass.description}}
 			</div>
+			<div class="btn art__cart-btn">На страницу автора</div>
 		</div>
 
 	</div>
