@@ -11,8 +11,8 @@ import {MenuService} from '../menu.service';
 @Component({
   selector: 'app-home-page',
   templateUrl: './home-page.component.html',
-  providers: [MenuService],
-  providers: [NewsService]
+  providers: [NewsService, MenuService]
+
 })
 
 export class HomePageComponent implements OnInit {
@@ -152,8 +152,3 @@ export class HomePageComponent implements OnInit {
   }
 
 }
-
-
-
-
-

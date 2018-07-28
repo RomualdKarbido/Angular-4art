@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ArtsService } from '../../arts.service';
 import { ActivatedRoute } from '@angular/router';
 import { Router } from '@angular/router';
+import { Observable } from 'rxjs-compat';
 
 
 
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 @Component({
 	selector: 'app-gallery',
 	templateUrl: './gallery.component.html',
-	providers: [ArtsService],
+	providers: [ArtsService]
 })
 export class GalleryComponent implements OnInit {
 
@@ -23,15 +24,9 @@ export class GalleryComponent implements OnInit {
 		des: '',
 	};
 
-
-
-
-
+	public IsVisiblePreloader: boolean = true;
 	public GalleryCart: any = [];
 	public Linklink = '';
-
-
-
 
 	//конструктор
 	constructor(private ArtsService: ArtsService, private route: ActivatedRoute, private router: Router) {
@@ -59,33 +54,32 @@ export class GalleryComponent implements OnInit {
 				//получаем все стр галереи худоника
 				let IdGallRouter:any = this.IdChild;
 				let obs3:any = this.ArtsService.GetArtGallery(IdGallRouter);
-
-
 				obs3.subscribe(f => {
 					this.Gallery = f;
-					
+
 					for (let n = 0; n < this.Gallery.length; n++) {
 						this.Gallery[n];
 						console.log(this.Gallery[n].featured_media + ' - все галереи юзера');
 						this.pushlinkimg(n);
-						// получаем фотку для галереи
 					}
 				});
+			});
+			Observable.forkJoin([obs4]).subscribe(() => {
+				this.IsVisiblePreloader = false;
 			});
 		});
 	}
 
-		// функция на получения фото
-		public pushlinkimg(n: number): void {
-			this.ArtsService.GetArtGalleryImg(this.Gallery[n].featured_media).subscribe(value => {
-				this.GalleryCart.push(
-					{	id: 	  this.Gallery[n].featured_media,
-						title:  this.Gallery[n].title.rendered,
-						link:   value.source_url
-					}
-				);
-			});
-
+	// функция на получения фото
+	public pushlinkimg(n: number): void {
+		this.ArtsService.GetArtGalleryImg(this.Gallery[n].featured_media).subscribe(value => {
+			this.GalleryCart.push(
+				{	id: 	  this.Gallery[n].featured_media,
+					title:  this.Gallery[n].title.rendered,
+					link:   value.source_url
+				}
+			);
+		});
 	}
 
 	ngOnInit() {

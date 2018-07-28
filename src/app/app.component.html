@@ -1,10 +1,13 @@
-<div class="wrapper" [ngClass]="{'home':IsHomepage, 'arts':IsArt}" > 
+<div class="wrapper" [ngClass]="{'home':IsHomepage, 'arts':IsArt}" >
 	<header class="header">
+		<div class="preloader" *ngIf="IsVisiblePreloader">
+			<div class="preloader__line"></div>
+		</div>
 		<app-topmenu></app-topmenu>
 	</header>
 
 	<main class="content" >
-		<router-outlet></router-outlet> 
+		<router-outlet></router-outlet>
 	</main><!-- .content -->
 
 </div>
@@ -24,7 +27,7 @@
 		</div>
 		<div class="footer__soc">
 			<div class="footer__soc-list">
-				<div class="footer__soc-item"> 
+				<div class="footer__soc-item">
 					<i class="mdi mdi-vk"></i>
 				</div>
 				<div class="footer__soc-item">
@@ -39,5 +42,4 @@
 	<div class="footer__bot">
 		<a class="footer__bot-link" href="mailto::robindtamat@gmail.com">robindtamat@gmail.com</a>
 	</div>
-</footer><!-- .footer --> 
-
+</footer><!-- .footer -->

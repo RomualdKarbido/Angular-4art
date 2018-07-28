@@ -1,24 +1,17 @@
+<div class="preloader" *ngIf="IsVisiblePreloader">
+	<div class="preloader__line"></div>
+</div>
+
 <div class="art">
 	<app-autorcart></app-autorcart>
-
-  <div class="gallery-box">
-    <h1>{{CategoryData.name}}</h1>
-    <!-- <div>{{CategoryData.des}}</div> -->
-    <div class="gallery-box__wrap">
-      <!-- <div class="gallery-box__item" *ngFor='let ItemGall of Gallery'>
-        <div>
-            {{ItemGall.title.rendered}}
-            <br>id photos = {{ItemGall.featured_media}}
-        </div>
-      </div> -->
-		<div class="gallery-box__item-wrap" *ngFor='let ItemGall of GalleryCart'>
-			<div class="gallery-box__item" [ngStyle]="{'background-image': 'url(' + ItemGall.link  + ')'}">
-      </div>
-			<div class="gallery-box__item-title">{{ItemGall.title}}</div> 
+	<div class="gallery-box">
+		<h1>{{CategoryData.name}}</h1>
+		<div class="gallery-box__wrap">
+			<div class="gallery-box__item-wrap" *ngFor='let ItemGall of GalleryCart'>
+				<div class="gallery-box__item" [ngStyle]="{'background-image': 'url(' + ItemGall.link  + ')'}">
+				</div>
+				<div class="gallery-box__item-title">{{ItemGall.title}}</div>
+			</div>
 		</div>
-
-    </div>
-
-  </div>
-
+	</div>
 </div>

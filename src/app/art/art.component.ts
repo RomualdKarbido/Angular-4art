@@ -8,8 +8,7 @@ import {ArtsService} from '../arts.service';
 @Component({
   selector: 'app-art',
   templateUrl: './art.component.html',
-  providers: [ArtsService],
-  providers: [MenuService]
+  providers: [ArtsService, MenuService]
 
 })
 
@@ -26,7 +25,7 @@ export class ArtComponent implements OnInit {
   public IdCat = 0;
   public LeftMenuArtsNew: any = [];
   public LeftSubArtsNew: any = [];
-
+  public IsVisiblePreloader: boolean = true;
 
 
   constructor(
@@ -39,14 +38,17 @@ export class ArtComponent implements OnInit {
     //получаем все статические стр художника
     this.route.params.subscribe(params => {
       this.IdCat = +params['cat']; // (+) converts string 'id' to a number
-      let menuautor2: any = this.MenuService.GetMenu(12);
-      menuautor2.subscribe(i => {
+      let obs24: any = this.MenuService.GetMenu(12);
+      obs24.subscribe(i => {
         this.LeftMenuArtsNew = i.items;
         for (let n = 0; n < this.LeftMenuArtsNew.length; n++) {
           if (this.LeftMenuArtsNew[n].object_id == this.IdCat) {
             this.LeftSubArtsNew = this.LeftMenuArtsNew[n].children;
           }
         }
+      });
+      Observable.forkJoin([obs24]).subscribe(() => {
+        this.IsVisiblePreloader = false;
       });
     });
 
@@ -57,7 +59,12 @@ export class ArtComponent implements OnInit {
       obs2.subscribe(d => {
         this.OnePage = d;
       });
+      Observable.forkJoin([obs2]).subscribe(() => {
+        this.IsVisiblePreloader = false;
+      });
     });
+
+
   }
 
 

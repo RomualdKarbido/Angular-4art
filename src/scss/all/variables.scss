@@ -44,13 +44,13 @@ $footer-h: 295px;
 }
 .preloader {
   position: fixed;
-  top: 97px;
+  top: 100px;
 
   left: 0;
   right: 0;
   height: 3px;
   display: flex;
-  z-index: 900;
+  z-index: 100;
   // animation: preloader  .7s;
   &__line {
     height: 100%;

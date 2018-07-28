@@ -5,6 +5,8 @@
 	margin: 0 auto;
 	height: $header-h;
 	align-items: center;
+	position: relative;
+	z-index: 2000;
 	&__item {
 		margin-right: 10px;
 		font-size: 16px;
@@ -124,7 +126,9 @@
 			transition: color 0.2s;
 			&:hover {
 				color: lighten($gold, 20%);
-
+			}
+			&.active {
+				color: $gold;
 			}
 		}
 		&-item {

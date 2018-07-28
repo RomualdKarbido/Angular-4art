@@ -1,3 +1,7 @@
+<div class="preloader" *ngIf="IsVisiblePreloader">
+	<div class="preloader__line"></div>
+</div>
+
 <div class="art__header">
 	<div class="art__cart">
 		<div class="art__cart-imgbox">
@@ -12,7 +16,7 @@
 			<div class="art__cart-text">
 				{{ Catmass.description}}
 			</div>
-			<div class="btn art__cart-btn">На страницу автора</div>
+			<div class="btn art__cart-btn" routerLink="/art/{{IdCat}}/{{AutorLink[0].object_id}}">На страницу автора</div>
 		</div>
 
 	</div>
