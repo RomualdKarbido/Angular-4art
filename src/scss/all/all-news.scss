@@ -35,7 +35,6 @@
 			outline: none;
 		}
 		&-img {
-			// background: black url(/assets/img/test.jpg) no-repeat;
 			background: black;
 			background-size: cover !important;
 			height: 255px;
@@ -71,12 +70,12 @@
 		}
 		&-tag {
 			font-size: 11px;
-			border: 2px solid $gray-light;
+			border: 1px solid $gray-light;
 			color: $gray-light;
 			line-height: 1;
 			border-radius: 10px;
 			padding: 3px 10px;
-			font-weight: 700;
+			//font-weight: 700;
 			margin-right: $sp/4;
 			&-left {
 				display: flex;
@@ -103,4 +102,18 @@
 		font-size: 10px;
 		margin-bottom: 40px;
 	}
+}
+
+@media (max-width: 700px) {
+  .all-news {
+    &__item {
+      &-img {
+        height: 180px;
+      }
+      &-text {
+        font-size: 14px;
+        height: 112px;
+      }
+    }
+  }
 }

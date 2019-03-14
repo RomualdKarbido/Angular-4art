@@ -25,8 +25,12 @@
 		}
 	}
 	&-box {
-		margin: 40px auto;
+		margin: 0 auto;
 		max-width: 1200px;
+    padding: 40px 0 20px;
+    h1 {
+      font-size: 30px;
+    }
 		&__wrap {
 			display: flex;
 			flex-wrap: wrap;
@@ -34,21 +38,13 @@
 			
 		}
 		&__item {
-			padding: 20px;
-			
-			box-sizing: border-box;
-			height: 100%;
-			border-radius: 3px;
-			position: relative;
-			background-position: center;
-			background-size: cover;
-			position: relative;
-			opacity: 0.7;
 
 
 			&-wrap {
-				flex: 0  0 calc(50% - 20px);
-				height: 350px;
+				flex: 1;
+        max-width: calc((100% - 40px)/3);
+        min-width: calc((100% - 40px)/3);
+        padding-bottom: calc(((100% - 40px)/3) * 0.75);
 				margin-bottom: $sp;
 				position: relative;
 				background: #322E2F;
@@ -56,28 +52,83 @@
 				box-sizing: border-box;
 				overflow: hidden;
 				border-radius: 3px;
+        outline: none;
+        cursor: pointer;
+        background-size: cover !important;
+        background-position: center center !important;
+        transition: all 0.2s;
+        &:nth-child(3n) {
+          margin-right: 0;
+        }
+        &:hover {
+          opacity: 0.7;
+        }
 
 
 			}
 			&-title {
 				position: absolute;
 				bottom: 0;
-				background: rgba(black, 0.6);
-				color: white;
+				background: rgba(white, 0.8);
+				color: $black;
 				left: 0;
 				right: 0;
 				padding: 25px 30px;
 				border-radius:  0 0 3px 3px;
-				font-size: 18px;
+				//font-size: 18px;
 				z-index: 10;
 				box-sizing: border-box;
 
 			}
-
-			&:nth-child(2n) {
-				margin-right: 0;
-			}
 		}
 	}
+  &__one {
+    &-wrap {
+      display: flex;
+      flex-wrap: wrap;
+    }
+    &-img {
+      max-width: calc((100% - 80px)/5);
+      min-width: calc((100% - 80px)/5);
+      flex: 1;
+      padding-bottom: calc(((100% - 80px)/5)*0.75);
+      margin-right: $sp;
+      background-size: cover;
+      margin-bottom: $sp;
+      border-radius: 2px;
+      cursor: pointer;
+      transition: 0.2s all;
+      position: relative;
+      background-size: cover !important;
+      background-position: center center;
+      overflow: hidden;
+      &:before {
+        content: "\F349";
+        font-family: "Material Design Icons";
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background: rgba(black, 0.5);
+        color: white;
+        font-size: 20px;
+        opacity: 0;
+        transition: all 0.3s;
+      }
+      &:nth-child(5n) {
+        margin-right: 0;
+      }
+      &:hover {
+        &:before {
+          opacity: 1;
+          font-size: 55px;
+        }
+      }
+    }
+  }
 
 }

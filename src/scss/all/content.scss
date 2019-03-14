@@ -33,6 +33,15 @@
       margin-top: 0;
     }
   }
+  h4 {
+    font-weight: normal;
+    margin-bottom: $sp - 5;
+    font-size: 18px;
+    margin-top: 25px;
+    &:first-child {
+      margin-top: 0;
+    }
+  }
   h2 {
     font-weight: bold;
     margin-bottom: $sp;

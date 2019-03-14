@@ -1,0 +1,11 @@
+<div class="search-block">
+  <form [formGroup]="searchform" (ngSubmit)="gosearch()" class="search-block__box" >
+
+    <div class="search-block__input"><input type="text" placeholder="Поиск по сайту" formControlName="search"></div>
+    <button class="btn  btn_icon btn_search"  type="submit" (ngSubmit)="gosearch()">
+      <i class="mdi mdi-magnify"></i>
+      <span class="search-block__text">Искать</span>
+    </button>
+
+  </form>
+</div>

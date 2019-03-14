@@ -1,0 +1,171 @@
+.modal {
+  width: 500px;
+
+  background: white;
+  border-radius: 3px;
+
+  //display: flex;
+
+  &__wrap {
+    background: rgba(black, 0.85);
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    justify-content: center;
+    align-items: center;
+    display: none;
+    &.active {
+      display: flex;
+      animation: darkned .3s;
+    }
+  }
+  &__header {
+
+    position: relative;
+    padding: $sp+10 $sp;
+    border-bottom: 1px solid #E0E0E0;
+    &-title {
+      font-weight: 700;
+      font-size: 18px;
+    }
+  }
+  &__close {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    transition: color 0.2s;
+    cursor: pointer;
+    &:hover {
+      color: $gold;
+    }
+  }
+  &__body {
+    padding: $sp;
+    min-height: 300px;
+    &_picture {
+      min-height: 100px;
+    }
+    &-text {
+      color: $black;
+    }
+  }
+  &__footer {
+    padding: $sp;
+  }
+  &_picture {
+    background: white;
+    border-radius: 3px;
+    display: flex;
+    max-width: 85%;
+    max-height: 85vh;
+    position: relative;
+    &.active {
+      animation: vizible .5s;
+      opacity: 1;
+    }
+  }
+  &__img {
+    background: gray;
+
+    img {
+      font-size: 0;
+      //width: auto !important;
+      //height: auto !important;
+      padding: 0;
+      margin: 0;
+      line-height: 0;
+      display: block;
+      border-radius: 3px 0 0 3px;
+      max-height: 85vh;
+      transition: all .3s;
+      opacity: 1;
+    }
+  }
+  &__textblock {
+    width: 300px;
+    min-width: 300px;
+    margin: 0 20px;
+
+  }
+  &__navigation {
+    color: white;
+    z-index: 10001;
+    font-size: 24px;
+  }
+  &__left {
+    left: $sp*2;
+    position: fixed;
+    top: 50%;
+    width: 30px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+  &__right {
+    right: $sp*2;
+    position: fixed;
+    top: 50%;
+    width: 30px;
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}
+
+.fade {
+  opacity: 0.1 !important;
+}
+
+.next {
+  animation: modnext 0.5s;
+}
+.prew {
+  animation: modprew 0.5s;
+}
+
+@keyframes vizible {
+  from {
+    opacity: 0;
+    transform: translateY(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0px);
+  }
+}
+
+@keyframes darkned {
+  from {
+    opacity: 0;
+
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes modnext {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}
+@keyframes modprew {
+  from {
+    opacity: 0;
+    transform: translateX(+30px);
+
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0px);
+  }
+}

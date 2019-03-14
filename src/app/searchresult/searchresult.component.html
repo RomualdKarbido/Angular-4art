@@ -1,0 +1,33 @@
+<app-search></app-search>
+<!--<div class="preloader" *ngIf="IsVisiblePreloader">-->
+<!--<div class="preloader__line"></div>-->
+<!--</div>-->
+<div class="search-result">
+  <!--<h2 *ngIf="searchservice.searchResultPage[0] || searchservice.searchResultPost[0]">Результаты поиска</h2>-->
+
+  <div class="search-result__wrap">
+
+    <div *ngIf="searchservice.searchResultPage[0]" class="search-result__pages">
+      <h2 class="search-result__title">Страницы</h2>
+      <div class="search-result__pages-wrap">
+        <div *ngFor='let page of searchservice.searchResultPage' class="search-result__item">
+          <a href="/art/{{page.categories[0]}}/{{page.id}}"><h4>{{page.title.rendered}}</h4></a>
+          <div [innerHTML]="page.excerpt.rendered"></div>
+        </div>
+      </div>
+    </div>
+
+    <div *ngIf="searchservice.searchResultPost[0]" class="search-result__pages">
+      <h2 class="search-result__title">Новости</h2>
+      <div class="search-result__pages-wrap">
+        <div *ngFor='let post of searchservice.searchResultPost' class="search-result__item">
+          <h4><a href="/all_news/news/{{post.id}}"  [innerHTML]=post.title.rendered></a></h4>
+          <div [innerHTML]="post.excerpt.rendered" class="search-result__text"></div>
+          <div class="search-result__date">{{post.date | date:'MM/dd/yyyy   h:mm'}}</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</div>

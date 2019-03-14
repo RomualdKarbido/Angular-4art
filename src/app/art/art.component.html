@@ -40,12 +40,12 @@
       </div>
 
 
-      <div class="one-news__contentblock">
+      <div class="one-news__contentblock" *ngIf="OnePage">
         <div class="one-news__header">
-          <h1 [innerHTML]="OnePage.title.rendered"></h1>
+          <h1 *ngIf="OnePage.title" [innerHTML]="OnePage.title.rendered"></h1>
         </div>
         <div class="one-news__content">
-          <div [innerHTML]="OnePage.content.rendered"></div>
+          <div *ngIf="OnePage.content" [innerHTML]="OnePage.content.rendered"></div>
         </div>
       </div>
     </div>

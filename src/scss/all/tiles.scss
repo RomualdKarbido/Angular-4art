@@ -7,6 +7,7 @@
 	&__item {
 		max-width: calc((100% - 40px) / 2;
 		flex: 0 0 calc((100% - 40px) / 2;
+    outline: none;
 		// flex:1;
 		flex: 0 0 50%;
 		height: calc((85vh - 80px) / 2;
@@ -89,9 +90,30 @@
 		margin-bottom: 40px;
 		padding: $sp $sp*2 0;
 		transition: all 0.4s;
-		
-		
-
 	}
-	
+}
+@media (max-width: 766px) {
+  .tiles {
+    &__item {
+      min-width: 100%;
+      max-width: 100%;
+      flex: 1;
+      margin: 0 0 $sp 0;
+    }
+  }
+}
+@media (max-width: 700px) {
+  .tiles {
+    padding: 16px;
+    &__name {
+      font-size: 22px;
+    }
+    &__merit {
+      font-size: 14px;
+    }
+    &__item {
+        min-height: 200px;
+        margin: 0 0 16px 0;
+    }
+  }
 }

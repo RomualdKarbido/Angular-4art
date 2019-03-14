@@ -6,6 +6,7 @@
 	justify-content: center;
   box-shadow: 1px -2px 4px #1b1a1a;
   position: relative;
+  padding: 0 50px;
   &__box {
     margin: 0 auto;
     max-width: 1200px;
@@ -17,4 +18,29 @@
    flex: 1;
    margin-right: $sp;
  }
+}
+@media (max-width: 700px) {
+  .search-block {
+      padding: 0 16px;
+    &__text {
+      display: none;
+    }
+    &__input {
+      margin-right: $sp/2;
+    }
+
+  }
+  .btn_search {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    width:60px;
+    i {
+      left: 0;
+      position: relative;
+      margin-right: 0;
+      top: 0;
+    }
+  }
 }

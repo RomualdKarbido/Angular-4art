@@ -48,4 +48,14 @@ export class ArtsService {
     return this.http.get('http://4arts.conglo.ru/wp-json/wp/v2/media/' + num)
       .map(response => response.json());
   }
+  //запрос на фото
+  GetGallPage(num) {
+    return this.http.get('http://4arts.conglo.ru/wp-json/wp/v2/pages/' + num)
+      .map(response => response.json());
+  }
+  //запрос на все фото в галерею
+  GetGallPagePhotos(num) {
+    return this.http.get('http://4arts.conglo.ru//wp-json/gallery_plugin/v1/post/' + num)
+      .map(response => response.json());
+  }
 }

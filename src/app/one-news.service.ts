@@ -1,8 +1,7 @@
-import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import 'rxjs-compat/add/operator/map'
-import {Observable} from 'rxjs';  
-
+import {Injectable} from '@angular/core';
+import {Http} from '@angular/http';
+import 'rxjs-compat/add/operator/map';
+import {Observable} from 'rxjs';
 
 
 @Injectable({
@@ -12,14 +11,16 @@ import {Observable} from 'rxjs';
 
 export class OneNewsService {
 
-  constructor(private http: Http) {}
-
-  GetOneNews(newsId: any){
-	return this.http.get('http://www.nd-ms.ru/wp-json/wp/v2/posts/' + newsId)
-		.map(response => response.json());
+  constructor(private http: Http) {
   }
-  GetNews(){
-		return this.http.get('http://www.nd-ms.ru/wp-json/wp/v2/posts?per_page=12')
-			.map(response => response.json());
-	} 
+
+  GetOneNews(newsId: any) {
+    return this.http.get('http://www.nd-ms.ru/wp-json/wp/v2/posts/' + newsId)
+      .map(response => response.json());
+  }
+
+  GetNews() {
+    return this.http.get('http://www.nd-ms.ru/wp-json/wp/v2/posts?per_page=12')
+      .map(response => response.json());
+  }
 }

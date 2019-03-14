@@ -62,3 +62,8 @@ body {
 	height: auto !important;
 	height: 100%;
 }
+@media (max-width: 1024px) {
+  .wrapper {
+    min-width: 100%;
+  }
+}

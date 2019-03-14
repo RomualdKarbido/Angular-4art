@@ -1,43 +1,35 @@
 <div class="preloader" *ngIf="IsVisiblePreloader">
-	<div class="preloader__line"></div>
+  <div class="preloader__line"></div>
 </div>
 
 <div class="one-news">
   <div class="one-news__leftmenu">
     <div class="one-news__leftmenu-fix">
-    <h3 class="one-news__leftmenu-title">Последине новости</h3>
+      <h3 class="one-news__leftmenu-title">Последине новости</h3>
       <div class="one-news__last"
-				*ngFor='let newsItem of NewsLeft'>
+           *ngFor='let newsItem of NewsLeft'>
 
         <div class="one-news__last-item"
-					routerLink="{{ '/all_news/news/' + newsItem.id }}"
-					(click) = "IdBtn(newsItem.id)"
-          routerLinkActive="active"
-					>
-          <div class="one-news__last-date" >{{ newsItem.date | date:'MM.dd.yyyy' }}</div>
+             routerLink="{{ '/all_news/news/' + newsItem.id }}"
+             (click)="IdBtn(newsItem.id)"
+             routerLinkActive="active">
           <div class="one-news__last-name" [innerHTML]='newsItem.title.rendered'></div>
+          <div class="one-news__last-date">{{ newsItem.date | date:'MM.dd.yyyy' }}</div>
         </div>
 
       </div>
     </div>
   </div>
-  <div class="one-news__contentblock">
+  <div class="one-news__contentblock" *ngIf="OneNews">
     <div class="one-news__header">
-      <h1 [innerHTML]='OneNews.title.rendered'> </h1>
+      <h1 [innerHTML]='OneNews.title.rendered'></h1>
       <div class="one-news__header-date">{{ OneNews.date | date:'MM.dd.yyyy' }}</div>
     </div>
     <div class="one-news__content" [innerHTML]="OneNews.content.rendered"></div>
   </div>
 </div>
 <div class="one-news__footer">
-	<!-- <div class="one-news__footer-left">
-    <div class="one-news__paginator">
-      <i class="mdi mdi-chevron-left"></i>
-      <i class="mdi mdi-record"></i>
-      <i class="mdi mdi-chevron-right"></i>
-    </div>
-  </div> -->
   <div class="one-news__footer-right">
-		<div class="btn btn_icon"routerLink="{{ '/all_news/'}}"><i class="mdi mdi-arrow-left"></i>Архив новостей</div>
-	</div>
+    <div class="btn btn_icon" routerLink="{{ '/all_news/'}}"><i class="mdi mdi-arrow-left"></i>Архив новостей</div>
+  </div>
 </div>

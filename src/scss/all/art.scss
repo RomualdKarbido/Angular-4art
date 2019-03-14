@@ -5,6 +5,15 @@
 }
 
 .art {
+  &_black {
+    background: #353535;
+    min-height: calc(100vh - 395px);
+    .gallery-box {
+      h1 {
+        color: white;
+      }
+    }
+  }
 	&__header {
 		background: #F8F6F2;
 		box-shadow: 1px -2px 4px #1b1a1a;
@@ -21,6 +30,11 @@
 		display: flex;
 		&-btn {
 			margin-top: $sp*2;
+      padding: 20px 30px !important;
+      &:hover {
+        background: $gold;
+        color: white !important;
+      }
 		}
 		&-info {
 			border-left: 1px solid #E0E0E0;

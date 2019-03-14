@@ -2,16 +2,18 @@
 	<div class="preloader__line"></div>
 </div>
 
-<div class="art">
+<div class="art art_black">
 	<app-autorcart></app-autorcart>
+
 	<div class="gallery-box">
 		<h1>{{CategoryData.name}}</h1>
 		<div class="gallery-box__wrap">
-			<div class="gallery-box__item-wrap" *ngFor='let ItemGall of GalleryCart'>
-				<div class="gallery-box__item" [ngStyle]="{'background-image': 'url(' + ItemGall.link  + ')'}">
-				</div>
-				<div class="gallery-box__item-title">{{ItemGall.title}}</div>
+			<div class="gallery-box__item-wrap" *ngFor='let ItemGall of GalleryCart' [ngStyle]="{'background-image': 'url(' + ItemGall.link  + ')'}"  routerLink="/art/{{IdCat}}/gall/{{ItemGall.id}}">
+
+				<div class="gallery-box__item-title">{{ItemGall.title}} {{ItemGall.id}}</div>
 			</div>
 		</div>
-	</div>
+  </div>
+
+
 </div>

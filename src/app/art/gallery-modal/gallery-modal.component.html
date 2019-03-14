@@ -1,0 +1,21 @@
+<div class="modal__wrap" [ngClass]="{'active' : galleryOneComponent.openmodal}">
+  <div class="modal_picture" [ngClass]="{'active' : galleryOneComponent.openmodal}" [@NextPhoto]="isOpen ? 'open' : 'closed'">
+    <div class="modal__close" (click)="galleryOneComponent.closeModal()"><i class="mdi mdi-close"></i></div>
+    <div class="modal__img">
+      <img class="modal__img-image" src={{modalpicture.guid.rendered}}></div>
+
+    <div class="modal__textblock">
+      <div class="modal__header">
+        <div class="modal__header-title">{{modalpicture.title.rendered}}</div>
+      </div>
+      <div class="modal__body modal__body_picture">
+        <div class="modal__body-text" [innerHTML]=modalpicture.caption.rendered></div>
+      </div>
+    </div>
+
+  </div>
+  <div class="modal__navigation">
+    <div class="modal__left" (click)="prewpicture(modalpicture.id)"><i class="mdi mdi-arrow-left"></i></div>
+    <div class="modal__right" (click)="nextpicture(modalpicture.id)"><i class="mdi mdi-arrow-right"></i></div>
+  </div>
+</div>

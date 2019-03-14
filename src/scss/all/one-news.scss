@@ -58,8 +58,8 @@
   &__last {
     animation: vizible  .7s;
     &-item {
-      display: flex;
-      align-items: flex-start;
+      //display: flex;
+      //align-items: flex-start;
       border-bottom: 1px solid #E0E0E0;
       margin-right: 85px;
       padding: 13px 0;
@@ -86,20 +86,24 @@
     }
     &-date {
       font-size: 9px;
-      padding: 3px 5px 2px;
-      border-radius: 20px;
-      border: 2px solid #979797;
+      //padding: 3px 5px 2px;
+      //border-radius: 20px;
+      margin-left: $sp - 5;
+      margin-top: 5px;
+      //border: 2px solid #979797;
       color: #979797;
-      line-height: 1;
-      font-weight: bold;
+
+      //font-weight: bold;
       transition: all 0.2s;
     }
     &-name {
-      font-size: 14px;
+      //font-size: 14px;
       color: lighten($black, 15%);
+      //text-transform: uppercase;
       margin-left: 15px;
-      font-weight: bold;
+      //font-weight: bold;
       transition: all 0.2s;
+      line-height: 1.2;
       i {
         margin-right: $sp/3;
       }

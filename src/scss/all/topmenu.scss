@@ -1,163 +1,195 @@
 .topmenu {
-	width: calc(100% - #{$sp} * 4);
-	display: flex;
-	justify-content: space-between;
-	margin: 0 auto;
-	height: $header-h;
-	align-items: center;
-	position: relative;
-	z-index: 2000;
-	&__item {
-		margin-right: 10px;
-		font-size: 16px;
-		display: flex;
-		align-items: center;
-		position: relative;
+  width: calc(100% - #{$sp} * 4);
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  height: $header-h;
+  align-items: center;
+  position: relative;
+  z-index: 2000;
+  &__item {
+    margin-right: 10px;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    position: relative;
 
-		&:after {
-			content: "\F12F";
-			color: $gold;
-			font-size: 6px;
-			font-family: "Material Design Icons";
-			position: relative;
-			padding-left: 10px;
-		}
-		&:last-child:after {
-			display: none;
-		}
-		&-wrap {
-			position: relative;
-			height: $header-h;
-			display: flex;
-			align-items: center;
-			&:hover {
-				.topmenu__submenu {
-					display: block;
-					animation: vizible  .3s;
+    &:after {
+      content: "\F12F";
+      color: $gold;
+      font-size: 6px;
+      font-family: "Material Design Icons";
+      position: relative;
+      padding-left: 10px;
+    }
+    &:last-child:after {
+      display: none;
+    }
+    &-wrap {
+      position: relative;
+      height: $header-h;
+      display: flex;
+      align-items: center;
+      &:hover {
+        .topmenu__submenu {
+          display: block;
+          animation: vizible .3s;
 
-				}
-			}
+        }
+      }
 
-		}
-		&-link {
-			text-decoration: none;
-			color: white;
-			transition: color 0.2s;
-			text-transform: uppercase;
+    }
+    &-link {
+      text-decoration: none;
+      color: white;
+      transition: color 0.2s;
+      text-transform: uppercase;
 
-			&.active {
-				color: $gold;
-			}
-		}
-		&:hover {
-			.topmenu__item-link {
-				color: lighten($gold, 20%);
-			}
-			.topmenu__item-link.active {
-				color: $red;
-			}
+      &.active {
+        color: $gold;
+      }
+    }
+    &:hover {
+      .topmenu__item-link {
+        color: lighten($gold, 20%);
+      }
+      .topmenu__item-link.active {
+        color: $red;
+      }
 
-		}
-	}
-	&__left {
-		display: flex;
-		border-right: 1px solid $gold;
-		height: 40px;
-		padding-right: $sp*2;
-		margin-right: $sp*3;
-		&_art {
-			border-right: none;
-		}
-		&_home {
-			.topmenu__item {
-				&:first-child {
-					.topmenu__item-link {
-						display: block;
-						width: 20px;
-						height: 20px;
-						&:before  {
-							content: "\F6A0";
-							font-family: "Material Design Icons";
-							position: relative;
-							width: 20px;
-							height: 20px;
-							font-size: 18px;
-							top: -1px
-						}
+    }
+  }
+  &__left {
+    display: flex;
+    border-right: 1px solid $gold;
+    height: 40px;
+    padding-right: $sp*2;
+    margin-right: $sp*3;
+    &_art {
+      border-right: none;
+    }
+    &_home {
+      .topmenu__item {
+        &:first-child {
+          .topmenu__item-link {
+            display: block;
+            width: 20px;
+            height: 20px;
+            &:before {
+              content: "\F6A0";
+              font-family: "Material Design Icons";
+              position: relative;
+              width: 20px;
+              height: 20px;
+              font-size: 18px;
+              top: -1px
+            }
 
-					}
+          }
 
-				}
-			}
-		}
-		&_language {
-			.topmenu__item {
-				&:after {
-					content: '';
-					border-right: 1px solid white;
-					height: 15px;
-				}
-			}
-		}
-		&-wrap {
-			display: flex;
-		}
-	}
+        }
+      }
+    }
+    &_language {
+      .topmenu__item {
+        &:after {
+          content: '';
+          border-right: 1px solid white;
+          height: 15px;
+        }
+      }
+    }
+    &-wrap {
+      display: flex;
+    }
+  }
 
-	&__submenu {
-		display: none;
-		position: absolute;
-		background: black;
-		top: 75px;
-		left: -30px;
-		width: 180px;
-		height: auto;
-		padding: $sp $sp+10px 5px $sp+10px;
-		z-index: 110;
-		border-radius: 0 0 3px 3px;
-		&-link {
-			text-transform: uppercase;
-			font-weight: 700;
-			color: white;
-			text-decoration: none;
-			outline: none;
-			display: block;
-			font-size: 14px;
-			transition: color 0.2s;
-			&:hover {
-				color: lighten($gold, 20%);
-			}
-			&.active {
-				color: $gold;
-			}
-		}
-		&-item {
-			margin-bottom: $sp;
-		}
-	}
-	&__right {
+  &__submenu {
+    display: none;
+    position: absolute;
+    background: black;
+    top: 75px;
+    left: -30px;
+    width: 180px;
+    height: auto;
+    padding: $sp $sp+10px 5px $sp+10px;
+    z-index: 110;
+    border-radius: 0 0 3px 3px;
+    &-link {
+      text-transform: uppercase;
+      font-weight: 700;
+      color: white;
+      text-decoration: none;
+      outline: none;
+      display: block;
+      font-size: 14px;
+      transition: color 0.2s;
+      &:hover {
+        color: lighten($gold, 20%);
+      }
+      &.active {
+        color: $gold;
+      }
+    }
+    &-item {
+      margin-bottom: $sp;
+    }
+  }
+  &__right {
 
-	}
-	&__soc {
-		border-left: 1px solid $b-gold;
-		padding-left: $sp*2;
-		padding-right: $sp*2;
-		display: flex;
-		align-items: center;
-		justify-content: center;
-		&-list {
-			display: flex;
-			align-items: center;
-			justify-content: center;
-		}
-		&-item {
-			margin: 0 $sp/2;
-			font-size: 20px;
-			cursor: pointer;
-			@extend .trans;
-			&:hover {
-				color: $gold;
-			}
-		}
-	}
+  }
+  &__soc {
+    border-left: 1px solid $b-gold;
+    padding-left: $sp*2;
+    padding-right: $sp*2;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &-list {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    &-item {
+      margin: 0 $sp/2;
+      font-size: 20px;
+      cursor: pointer;
+      @extend .trans;
+      &:hover {
+        color: $gold;
+      }
+    }
+  }
+}
+
+@media (max-width: 1550px) {
+  .topmenu {
+    &__right {
+      display: none;
+    }
+    &__left {
+      padding-right: 20px;
+      margin-right: 40px;
+      &_art {
+        padding-right: 0;
+        margin-right: 0;
+      }
+      &_home {
+
+      }
+    }
+  }
+}
+@media (max-width: 700px) {
+  .topmenu {
+
+    &__left {
+      &_language {
+        border: none;
+      }
+      &_home {
+        display: none;
+      }
+    }
+  }
 }

@@ -17,17 +17,12 @@ import {MenuService} from '../menu.service';
 
 export class HomePageComponent implements OnInit {
 
-  MenuArts = {};
+  public MenuArts = {};
+  public News = [];
+  public Cat = [];
+  public linkImg = [];
 
-
-  News = [];
-  News2 = [];
-  Cat = [];
-  ImgN = [];
-  ImgNewsID = [];
-  linkImg = [];
-
-  scrollToTop(e, outlet) {
+  public scrollToTop(e, outlet) {
     outlet.scrollTop = 0;
   }
 
@@ -63,9 +58,7 @@ export class HomePageComponent implements OnInit {
     //меню авторов
     let menuautor3: any = this.MenuService.GetMenu(12);
     menuautor3.subscribe(i => {
-      this.MenuArts = i.items;
-      console.log(this.MenuArts);
-    });
+      this.MenuArts = i.items;});
 
     let obs1 = this.newsService.GetNews(this.newPage);
     obs1.subscribe(i => {
@@ -103,8 +96,8 @@ export class HomePageComponent implements OnInit {
       $('.news-slider__wrap').slick({
         dots: true,
         infinite: true,
-        slidesToShow: 4,
-        slidesToScroll: 4,
+        slidesToShow: 3,
+        slidesToScroll: 3,
         edgeFriction: false,
         arrows: false,
         responsive: [
@@ -128,13 +121,6 @@ export class HomePageComponent implements OnInit {
           },
           {
             breakpoint: 720,
-            settings: {
-              slidesToShow: 2,
-              slidesToScroll: 2
-            }
-          },
-          {
-            breakpoint: 480,
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1

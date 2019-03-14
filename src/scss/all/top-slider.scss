@@ -84,5 +84,25 @@
 			}	
 		}
 	}
-	
+}
+
+@media (max-width: 1024px) {
+  .top-slider {
+    min-height: 667px;
+    .slick-arrow {
+      top: 47%;
+    }
+    .slick-next {
+      right: 0 !important;
+    }
+    .slick-prev {
+      left: 0 !important;
+    }
+    &__item {
+      min-height: 667px;
+    }
+    &__text {
+      display: none;
+    }
+  }
 }

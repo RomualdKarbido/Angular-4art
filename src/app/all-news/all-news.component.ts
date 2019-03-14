@@ -65,11 +65,11 @@ export class AllNewsComponent implements OnInit {
 		var obs1 = this.newsService.GetNews(this.newPage);
 		obs1.subscribe( i => {
 			this.News = i;
-			console.log(this.News);
+			// console.log(this.News);
 
 			for(var r=0; r<this.News.length; r++) {
 				this.linkImg[r] = 'http://www.nd-ms.ru/wp-json/wp/v2/media/' + this.News[r].featured_media;
-				console.log('запрос на img - ' + ' -' + this.linkImg[r]);
+				// console.log('запрос на img - ' + ' -' + this.linkImg[r]);
 
 				var obs5 = this.http.get(this.linkImg[r]).map(response => response.json());
 				obs5.subscribe( xx => {

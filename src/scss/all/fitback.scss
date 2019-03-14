@@ -24,3 +24,8 @@
 		margin-bottom: $sp;
 	}
 }
+@media (max-width: 1024px) {
+  .fitback {
+    display: none;
+  }
+}

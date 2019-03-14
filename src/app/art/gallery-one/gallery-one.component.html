@@ -1,0 +1,42 @@
+<div class="preloader" *ngIf="IsVisiblePreloader">
+  <div class="preloader__line"></div>
+</div>
+
+<div class="art art_black">
+
+
+
+  <div class="art__header">
+    <div class="art__cart">
+      <div class="art__cart-imgbox">
+
+        <div class="art__cart-img"  [ngStyle]="{'background-image': 'url(' + catImg  + ')'}"></div>
+      </div>
+      <div class="art__cart-info">
+        <h3 *ngIf="GalleryPageOn">{{GalleryPage.title.rendered}}</h3>
+
+        <div class="art__cart-text">
+          {{catDescription}}
+        </div>
+        <div class="btn art__cart-btn" (click)="backClicked()"><i class="mdi mdi-arrow-left"></i> Смотреть другие работы автора</div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="gallery-box">
+    <div class="gallery__one-wrap" *ngIf="photolistnewOn">
+      <div class="gallery__one-img" *ngFor='let photo of photolistnew' (click)="openModal(photo)"
+           [ngStyle]="{'background-image': 'url(' + photo.guid.rendered  + ')'}">
+      </div>
+    </div>
+
+
+  </div>
+</div>
+<app-gallery-modal *ngIf="openmodal"></app-gallery-modal>
+
+

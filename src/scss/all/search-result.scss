@@ -1,0 +1,55 @@
+.searchresult {
+  .content {
+    max-width: 100%;
+  }
+}
+.search-result {
+  width: 1200px;
+  padding: 30px;
+  margin: 0 auto;
+  &__wrap {
+
+  }
+  &__pages {
+    //border-bottom: 1px solid #E0E0E0;
+    margin-bottom: $sp *3;
+    &-wrap {
+    }
+  }
+  &__title {
+    br {
+      display: none;
+    }
+  }
+  &__item {
+    border-top: 1px solid #E0E0E0;
+    padding-top: $sp;
+    &_news {
+      display: flex;
+      justify-content: space-between;
+      padding-bottom: $sp;
+    }
+    h4 {
+      a {
+        br {
+          display: none;
+        }
+      }
+    }
+  }
+  &__more {
+    background: white;
+
+  }
+  &__date {
+    margin-bottom: $sp;
+    font-size: 14px;
+    color: #4a4a4a66;
+    margin-top: -$sp/2;
+  }
+  &__text {
+    .more-link {
+      display: none;
+    }
+  }
+}
